@@ -4,13 +4,13 @@
 
 	<parent>
 		<groupId>com.imatia</groupId>
-		<artifactId>PopCornClub</artifactId>
+		<artifactId>popcornclub</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<name>Basic project frontend</name>
 	<description>Basic project frontend app.</description>
-	<artifactId>PopCornClub-frontend</artifactId>
+	<artifactId>popcornclub-frontend</artifactId>
 	<packaging>jar</packaging>
 
 	<build>

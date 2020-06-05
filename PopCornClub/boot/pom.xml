@@ -4,32 +4,32 @@
 
 	<parent>
 		<groupId>com.imatia</groupId>
-		<artifactId>PopCornClub</artifactId>
+		<artifactId>popcornclub</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<name>Basic project boot</name>
 	<description>Basic project services.</description>
-	<artifactId>PopCornClub-boot</artifactId>
+	<artifactId>popcornclub-boot</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.imatia</groupId>
-			<artifactId>PopCornClub-api</artifactId>
+			<artifactId>popcornclub-api</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>com.imatia</groupId>
-			<artifactId>PopCornClub-frontend</artifactId>
+			<artifactId>popcornclub-frontend</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.imatia</groupId>
-			<artifactId>PopCornClub-model</artifactId>
+			<artifactId>popcornclub-model</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.imatia</groupId>
-			<artifactId>PopCornClub-ws</artifactId>
+			<artifactId>popcornclub-ws</artifactId>
 		</dependency>
 	</dependencies>
 
