@@ -1,4 +1,4 @@
-package com.imatia.PopCornClub.model.core.dao;
+package com.imatia.popcornclub.model.core.dao;
 
 
 import org.springframework.context.annotation.Lazy;

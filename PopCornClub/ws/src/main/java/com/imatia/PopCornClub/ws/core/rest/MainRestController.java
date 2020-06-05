@@ -1,4 +1,4 @@
-package com.imatia.PopCornClub.ws.core.rest;
+package com.imatia.popcornclub.ws.core.rest;
 
 //import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

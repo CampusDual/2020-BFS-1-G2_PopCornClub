@@ -1,4 +1,4 @@
-package com.imatia.PopCornClub.boot.core;
+package com.imatia.popcornclub.boot.core;
 
 
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.imatia.PopCornClub.model.core","com.imatia.PopCornClub.ws.core"})
+@ComponentScan(basePackages = {"com.imatia.popcornclub.model.core","com.imatia.popcornclub.ws.core"})
 public class ServerApplication {
 
 	public static void main(String[] args) {

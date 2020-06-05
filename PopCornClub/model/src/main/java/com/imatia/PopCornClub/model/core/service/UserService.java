@@ -1,4 +1,4 @@
-package com.imatia.PopCornClub.model.core.service;
+package com.imatia.popcornclub.model.core.service;
 
 
 import java.sql.Timestamp;
@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.imatia.PopCornClub.api.core.service.IUserService;
-import com.imatia.PopCornClub.model.core.dao.UserDao;
+import com.imatia.popcornclub.api.core.service.IUserService;
+import com.imatia.popcornclub.model.core.dao.UserDao;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 

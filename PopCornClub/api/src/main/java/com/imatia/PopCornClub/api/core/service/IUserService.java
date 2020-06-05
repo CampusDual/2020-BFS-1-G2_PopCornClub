@@ -1,4 +1,4 @@
-package com.imatia.PopCornClub.api.core.service;
+package com.imatia.popcornclub.api.core.service;
 
 
 import java.util.List;

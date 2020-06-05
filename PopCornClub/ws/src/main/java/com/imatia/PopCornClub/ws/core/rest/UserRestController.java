@@ -1,4 +1,4 @@
-package com.imatia.PopCornClub.ws.core.rest;
+package com.imatia.popcornclub.ws.core.rest;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.imatia.PopCornClub.api.core.service.IUserService;
+import com.imatia.popcornclub.api.core.service.IUserService;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.server.rest.ORestController;
 
 
 @RestController
 @RequestMapping("/users")
-@ComponentScan(basePackageClasses={com.imatia.PopCornClub.api.core.service.IUserService.class})
+@ComponentScan(basePackageClasses={com.imatia.popcornclub.api.core.service.IUserService.class})
 public class UserRestController extends ORestController<IUserService> {
 
 	@Autowired
