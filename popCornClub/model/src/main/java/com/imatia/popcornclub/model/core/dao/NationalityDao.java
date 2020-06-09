@@ -11,8 +11,8 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/NationalityDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class NationalityDao extends OntimizeJdbcDaoSupport {
 
- public static final String ATTR_ID = "id_nationality";
- public static final String ATTR_PHOTO = "nationality_name";
+ public static final String ATTR_ID_NATIONALITY = "id_nationality";
+ public static final String ATTR_NATIONALITY_NAME = "nationality_name";
 
 
 }

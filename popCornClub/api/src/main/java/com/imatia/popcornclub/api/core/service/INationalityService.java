@@ -8,7 +8,7 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 
 public interface INationalityService {
 
- // CANDIDATE
+ // NATIONALITY
  public EntityResult nationalityQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
  public EntityResult nationalityInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
  public EntityResult nationalityUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
