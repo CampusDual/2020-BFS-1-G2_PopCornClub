@@ -20,7 +20,6 @@ public class MovieService implements IMovieService{
 
     @Autowired private MovieDao movieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
-
     public EntityResult moviesQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.movieDao, keyMap, attrList);
     }
