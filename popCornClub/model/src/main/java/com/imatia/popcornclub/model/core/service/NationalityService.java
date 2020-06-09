@@ -1,4 +1,4 @@
-package com.ontimize.hr.model.core.service;
+package com.imatia.popcornclub.model.core.service;
 
 import java.util.List;
 import java.util.Map;
@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import com.imatia.popcornclub.api.core.service.INationalityService;
+import com.imatia.popcornclub.model.core.dao.NationalityDao;
 import com.ontimize.db.EntityResult;
-import com.ontimize.hr.api.core.service.ICandidateService;
-import com.ontimize.hr.model.core.dao.CandidateDao;
+import com.imatia.popcornclub.model.core.dao.NationalityDao;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 

@@ -1,4 +1,4 @@
-package com.ontimize.hr.api.core.service;
+package com.imatia.popcornclub.api.core.service;
 
 import java.util.List;
 import java.util.Map;
