@@ -70,9 +70,9 @@
 								</goals>
 								<configuration>
 									<target>
-										<available file="${hsqldatabase.path}/templateDB.script" property="database.exist" />
-										<echo message="${hsqldatabase.path}/templateDB.script" />
-										<copy tofile="${hsqldatabase.path}/templateDB.script" file="${hsqldatabase.path}/templateDB.txt" />
+										<available file="${hsqldatabase.path}/cd02.script" property="database.exist" />
+										<echo message="${hsqldatabase.path}/cd02.script" />
+										<copy tofile="${hsqldatabase.path}/cd02.script" file="${hsqldatabase.path}/cd02.txt" />
 									</target>
 								</configuration>
 							</execution>
@@ -86,11 +86,11 @@
 							<mainClass>org.hsqldb.Server</mainClass>
 							<arguments>
 								<argument>-port</argument>
-								<argument>9013</argument>
+								<argument>65432</argument>
 								<argument>-database.0</argument>
-								<argument>${hsqldatabase.path}/templateDB</argument>
+								<argument>${hsqldatabase.path}/cd02</argument>
 								<argument>-dbname.0</argument>
-								<argument>templateDB</argument>
+								<argument>cd02</argument>
 							</arguments>
 						</configuration>
 					</plugin>
