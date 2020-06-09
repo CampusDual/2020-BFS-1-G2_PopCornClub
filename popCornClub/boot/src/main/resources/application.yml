@@ -61,7 +61,7 @@ server:
       mime-types: application/json, application/xml
 spring:
    datasource:
-      driver-class-name: org.postgresql.jdbcDriver
+      driver-class-name: org.postgresql.Driver
       jdbcUrl: jdbc:postgresql://45.84.210.174:65432/cd02
       username: cd02
       password: cd02_p4$$!
