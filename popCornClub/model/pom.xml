@@ -41,11 +41,6 @@
 			<artifactId>ontimize-boot-starter-rest</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -68,13 +63,7 @@
 								<goals>
 									<goal>run</goal>
 								</goals>
-								<configuration>
-									<target>
-										<available file="${hsqldatabase.path}/cd02.script" property="database.exist" />
-										<echo message="${hsqldatabase.path}/cd02.script" />
-										<copy tofile="${hsqldatabase.path}/cd02.script" file="${hsqldatabase.path}/cd02.txt" />
-									</target>
-								</configuration>
+								
 							</execution>
 						</executions>
 					</plugin>
@@ -82,17 +71,6 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>1.2.1</version>
-						<configuration>
-							<mainClass>org.hsqldb.Server</mainClass>
-							<arguments>
-								<argument>-port</argument>
-								<argument>65432</argument>
-								<argument>-database.0</argument>
-								<argument>${hsqldatabase.path}/cd02</argument>
-								<argument>-dbname.0</argument>
-								<argument>cd02</argument>
-							</arguments>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
