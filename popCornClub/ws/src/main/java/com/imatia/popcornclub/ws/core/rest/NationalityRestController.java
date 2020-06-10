@@ -9,7 +9,7 @@ import com.imatia.popcornclub.api.core.service.INationalityService;
 import com.ontimize.jee.server.rest.ORestController;
 
 @RestController
-@RequestMapping("/nationality")
+@RequestMapping("/nationalities")
 @ComponentScan(basePackageClasses = { com.imatia.popcornclub.api.core.service.INationalityService.class })
 public class NationalityRestController extends ORestController<INationalityService> {
 

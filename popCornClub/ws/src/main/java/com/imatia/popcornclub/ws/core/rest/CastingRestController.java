@@ -9,7 +9,7 @@ import com.imatia.popcornclub.api.core.service.ICastingService;
 import com.ontimize.jee.server.rest.ORestController;
 
 @RestController
-@RequestMapping("/casting")
+@RequestMapping("/castings")
 @ComponentScan(basePackageClasses = { com.imatia.popcornclub.api.core.service.ICastingService.class })
 public class CastingRestController extends ORestController<ICastingService> {
 

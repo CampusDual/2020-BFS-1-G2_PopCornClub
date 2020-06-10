@@ -10,7 +10,7 @@ import com.imatia.popcornclub.api.core.service.IRatingService;
 import com.ontimize.jee.server.rest.ORestController;
 
 @RestController
-@RequestMapping("/rating")
+@RequestMapping("/ratings")
 @ComponentScan(basePackageClasses = { com.imatia.popcornclub.api.core.service.IRatingService.class })
 public class RatingRestController extends ORestController<IRatingService> {
 
