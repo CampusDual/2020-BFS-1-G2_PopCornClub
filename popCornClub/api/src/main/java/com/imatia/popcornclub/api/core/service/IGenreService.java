@@ -9,10 +9,10 @@ import java.util.Map;
 public interface IGenreService {
 
     //SERVICE
-    public EntityResult genresQuery(Map<String, Object> keyMap, List<String> attrList)throws OntimizeJEERuntimeException;
-    public EntityResult genresInsert(Map<String, Object> attrMap)throws OntimizeJEERuntimeException;
-    public EntityResult genresUpdate(Map<String, Object> attrMap, Map<String, Object>keyMap)throws OntimizeJEERuntimeException;
-    public EntityResult genresDelete(Map<String, Object> keyMap)throws OntimizeJEERuntimeException;
+    public EntityResult genreQuery(Map<String, Object> keyMap, List<String> attrList)throws OntimizeJEERuntimeException;
+    public EntityResult genreInsert(Map<String, Object> attrMap)throws OntimizeJEERuntimeException;
+    public EntityResult genreUpdate(Map<String, Object> attrMap, Map<String, Object>keyMap)throws OntimizeJEERuntimeException;
+    public EntityResult genreDelete(Map<String, Object> keyMap)throws OntimizeJEERuntimeException;
 
 
 

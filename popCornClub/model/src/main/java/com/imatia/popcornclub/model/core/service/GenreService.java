@@ -20,22 +20,23 @@ public class GenreService implements IGenreService {
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
 
     @Override
-    public EntityResult genresQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+    public EntityResult genreQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.genreDao, keyMap, attrList);
     }
 
     @Override
-    public EntityResult genresInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+    public EntityResult genreInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.insert(this.genreDao, attrMap);
     }
 
     @Override
-    public EntityResult genresUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult genreUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.update(this.genreDao, attrMap, keyMap);
     }
 
     @Override
-    public EntityResult genresDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult genreDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.genreDao, keyMap);
     }
+
 }
