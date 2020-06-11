@@ -9,8 +9,8 @@ import java.util.Map;
 public interface IMovieService {
 
     //SERVICE
-    public EntityResult moviesQuery(Map<String, Object> keyMap, List<String> attrList)throws OntimizeJEERuntimeException;
-    public EntityResult moviesInsert(Map<String, Object> attrMap)throws OntimizeJEERuntimeException;
-    public EntityResult moviesUpdate(Map<String, Object> attrMap, Map<String, Object>keyMap)throws OntimizeJEERuntimeException;
-    public EntityResult moviesDelete(Map<String, Object> keyMap)throws OntimizeJEERuntimeException;
+    public EntityResult movieQuery(Map<String, Object> keyMap, List<String> attrList)throws OntimizeJEERuntimeException;
+    public EntityResult movieInsert(Map<String, Object> attrMap)throws OntimizeJEERuntimeException;
+    public EntityResult movieUpdate(Map<String, Object> attrMap, Map<String, Object>keyMap)throws OntimizeJEERuntimeException;
+    public EntityResult movieDelete(Map<String, Object> keyMap)throws OntimizeJEERuntimeException;
 }

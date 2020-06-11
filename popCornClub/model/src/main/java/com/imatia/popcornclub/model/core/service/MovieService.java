@@ -20,22 +20,22 @@ public class MovieService implements IMovieService{
 
     @Autowired private MovieDao movieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
-    public EntityResult moviesQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+    public EntityResult movieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.movieDao, keyMap, attrList);
     }
 
     @Override
-    public EntityResult moviesInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+    public EntityResult movieInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.insert(this.movieDao, attrMap);
     }
 
     @Override
-    public EntityResult moviesUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult movieUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.update(this.movieDao, attrMap, keyMap);
     }
 
     @Override
-    public EntityResult moviesDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult movieDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.movieDao, keyMap);
     }
 }
