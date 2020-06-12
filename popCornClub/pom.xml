@@ -70,8 +70,6 @@
 				<artifactId>hsqldb</artifactId>
 				<version>${hsqldb.version}</version>
 			</dependency>
-
-
 		</dependencies>
 	</dependencyManagement>
 <modules>  <module>api</module>
