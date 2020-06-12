@@ -71,17 +71,10 @@
 				<version>${hsqldb.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>42.2.13</version>
-			</dependency>
-
 
 		</dependencies>
 	</dependencyManagement>
-<modules>
-    <module>api</module>
+<modules>  <module>api</module>
     <module>frontend</module>
     <module>boot</module>
     <module>model</module>
