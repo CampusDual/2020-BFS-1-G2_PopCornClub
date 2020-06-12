@@ -40,12 +40,11 @@
 			<groupId>com.ontimize.boot</groupId>
 			<artifactId>ontimize-boot-starter-rest</artifactId>
 		</dependency>
-
-		<dependency>
+    
+	    <dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -68,31 +67,9 @@
 								<goals>
 									<goal>run</goal>
 								</goals>
-								<configuration>
-									<target>
-										<available file="${hsqldatabase.path}/templateDB.script" property="database.exist" />
-										<echo message="${hsqldatabase.path}/templateDB.script" />
-										<copy tofile="${hsqldatabase.path}/templateDB.script" file="${hsqldatabase.path}/templateDB.txt" />
-									</target>
-								</configuration>
+								
 							</execution>
 						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.2.1</version>
-						<configuration>
-							<mainClass>org.hsqldb.Server</mainClass>
-							<arguments>
-								<argument>-port</argument>
-								<argument>9013</argument>
-								<argument>-database.0</argument>
-								<argument>${hsqldatabase.path}/templateDB</argument>
-								<argument>-dbname.0</argument>
-								<argument>templateDB</argument>
-							</arguments>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
