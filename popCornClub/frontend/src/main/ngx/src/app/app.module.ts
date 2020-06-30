@@ -24,8 +24,7 @@ export const customProviders: any = [
     AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    MoviesViewComponent
+    AppComponent
   ],
   bootstrap: [
     AppComponent
