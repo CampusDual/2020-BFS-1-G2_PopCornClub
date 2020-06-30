@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 @ConfigurationFile(configurationFile = "dao/CategoryHasMovieDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 
 public class CategoryHasMovieDao extends OntimizeJdbcDaoSupport {
+
+    public static final String ATTR_ID_CATEGORY_HAS_MOVIE = "id_category_has_movie";
     public static final String ATTR_ID_CATEGORY = "id_category";
     public static final String ATTR_ID_MOVIE = "id_movie";
 }

@@ -5,6 +5,7 @@ import com.imatia.popcornclub.model.core.dao.*;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
+import com.ontimize.jee.server.dao.IOntimizeDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,8 @@ public class MasterService implements IMasterService {
     @Autowired private FavoriteCastingHasUserDao favoriteCastingHasUserDao;
     @Autowired private FavoriteGenreHasUserDao favoriteGenreHasUserDao;
     @Autowired private FavoriteMovieHasUserDao favoriteMovieHasUserDao;
+    @Autowired private GenreHasMovieDao genreHasMovieDao;
+    @Autowired private NationalityHasMovieDao nationalityHasMovieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
 
 
@@ -174,5 +177,45 @@ public class MasterService implements IMasterService {
     @Override
     public EntityResult favoriteMovieHasUserDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.favoriteMovieHasUserDao, keyMap);
+    }
+
+
+    //GENRE_HAS_MOVIE
+    @Override
+    public EntityResult genreHasMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.genreHasMovieDao, keyMap, attrList);
+    }
+    @Override
+    public EntityResult genreHasMovieInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.insert(this.genreHasMovieDao, attrMap);
+    }
+    @Override
+    public EntityResult genreHasMovieUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.update(this.genreHasMovieDao, attrMap, keyMap);
+    }
+    @Override
+    public EntityResult genreHasMovieDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.delete(this.genreHasMovieDao, keyMap);
+    }
+
+    //NATIONALITY_HAS_MOVIE
+    @Override
+    public EntityResult nationalityHasMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.nationalityHasMovieDao, keyMap, attrList);
+    }
+
+    @Override
+    public EntityResult nationalityHasMovieInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.insert(this.nationalityHasMovieDao, attrMap);
+    }
+
+    @Override
+    public EntityResult nationalityHasMovieUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.update(this.nationalityHasMovieDao, attrMap, keyMap);
+    }
+
+    @Override
+    public EntityResult nationalityHasMovieDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.delete(this.nationalityHasMovieDao, keyMap);
     }
 }

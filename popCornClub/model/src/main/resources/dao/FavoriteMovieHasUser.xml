@@ -6,10 +6,10 @@
         catalog="" schema="${mainschema}" table="favorite_movie_has_user"
         datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
     <DeleteKeys>
-        <Column>id_movie</Column>
+        <Column>id_favorite_movie_has_user</Column>
     </DeleteKeys>
     <UpdateKeys>
-        <Column>id_movie</Column>
+        <Column>id_favorite_movie_has_user</Column>
     </UpdateKeys>
-    <GeneratedKey>id_movie</GeneratedKey>
+    <GeneratedKey>id_favorite_movie_has_user</GeneratedKey>
 </JdbcEntitySetup>

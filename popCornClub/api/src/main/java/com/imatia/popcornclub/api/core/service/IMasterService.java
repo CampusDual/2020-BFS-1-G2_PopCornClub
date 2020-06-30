@@ -55,4 +55,16 @@ public interface IMasterService {
     public EntityResult favoriteMovieHasUserInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
     public EntityResult favoriteMovieHasUserUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
     public EntityResult favoriteMovieHasUserDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
+    //GENRE_HAS_MOVIE
+    public EntityResult genreHasMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+    public EntityResult genreHasMovieInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
+    public EntityResult genreHasMovieUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult genreHasMovieDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
+    //NATIONALITY_HAS_MOVIE
+    public EntityResult nationalityHasMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+    public EntityResult nationalityHasMovieInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
+    public EntityResult nationalityHasMovieUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult nationalityHasMovieDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 }

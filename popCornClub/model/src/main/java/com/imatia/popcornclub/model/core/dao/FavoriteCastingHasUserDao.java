@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 public class FavoriteCastingHasUserDao extends OntimizeJdbcDaoSupport {
 
+    public static final String ATTR_ID_FAVORITE_CASTING_HAS_USER = "id_favorite_casting_has_user";
     public static final String ATTR_ID_CASTING = "id_casting";
     public static final String ATTR_ID_USER = "id_user";
 }
