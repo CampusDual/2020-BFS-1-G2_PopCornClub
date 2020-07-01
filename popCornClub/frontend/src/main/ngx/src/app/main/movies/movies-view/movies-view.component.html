@@ -1,28 +1,33 @@
 <div class="container" *ngIf="movie">
   <div class="row">
-    <div class="col-4">
-      <img src="{{movie.poster}}" alt="Movie Poster">
+    <div class="col-8 row">
+      <div class="col-4">
+        <img src="{{movie.poster}}" alt="Movie Poster">
+      </div>
+      <div class="col-8">
+        <h3>{{movie.movie_name}}</h3>
+        <p>{{movie.movie_year}} | {{movie.duration}} min | PROCEDENCIA!!</p> <!--FIXME: revisar back datos de procedencia-->
+        <p class="movie-rating"><i class="material-icons score-star">grade</i><span><b>{{movie.media_rating}}</b> / 10</span><a href="#">DA TU VALORACION</a></p>
+        <p>{{movie.description}}</p>
+        <p class="tag-list">
+          <span class="badge badge-secondary">Tag</span>
+          <span class="badge badge-secondary">Tag</span>
+          <span class="badge badge-secondary">Tag</span>
+          <span class="badge badge-secondary">Tag</span>
+          <span class="badge badge-secondary">Tag</span>
+        </p>
+        <p>
+          <!--FIXME: revisar back datos que non se poden obter-->
+          <b>Key:</b> Value<br>
+          <b>Key:</b> Value<br>
+          <b>Key:</b> Value<br>
+          <b>Key:</b> Value<br>
+          <b>Key:</b> Value<br>
+        </p>
+      </div>
     </div>
-    <div class="col-8">
-      <h3>{{movie.movie_name}}</h3>
-      <p>{{movie.movie_year}} | {{movie.duration}} min | PROCEDENCIA!!</p> <!--FIXME: revisar back datos de procedencia-->
-      <p class="movie-rating"><i class="material-icons score-star">grade</i><span><b>{{movie.media_rating}}</b> / 10</span><a href="#">DA TU VALORACION</a></p>
-      <p>{{movie.description}}</p>
-      <p class="tag-list">
-        <span class="badge badge-secondary">Tag</span>
-        <span class="badge badge-secondary">Tag</span>
-        <span class="badge badge-secondary">Tag</span>
-        <span class="badge badge-secondary">Tag</span>
-        <span class="badge badge-secondary">Tag</span>
-      </p>
-      <p>
-        <!--FIXME: revisar back datos que non se poden obter-->
-        <b>Key:</b> Value<br>
-        <b>Key:</b> Value<br>
-        <b>Key:</b> Value<br>
-        <b>Key:</b> Value<br>
-        <b>Key:</b> Value<br>
-      </p>
+    <div class="col-4">
+      <app-related-movies></app-related-movies>
     </div>
   </div>
 </div>
