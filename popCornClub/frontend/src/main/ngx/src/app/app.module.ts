@@ -10,6 +10,8 @@ import {
 import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MainComponent } from "./main/main.component";
+import { NavbarComponent } from '../app/main/components/navbar/navbar.component';
 
 // Standard providers...
 // Defining custom providers (if needed)...
@@ -23,8 +25,9 @@ export const customProviders: any = [
     AppRoutingModule
   ],
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    NavbarComponent
+    ],
   bootstrap: [
     AppComponent
   ],
