@@ -15,7 +15,7 @@ export class RelatedMoviesComponent implements OnInit {
       "movie_name": "Indiana Jones y el santuario de la orden negra",
       "description": "1938. A group of American archaeologists are taken prisoners in the Castle of Wewelsburg. Indiana Jones with Sallah and Husani will travel to the Nazi Vatican, to discover the last and the darkest plan of the Third Reich.",
       "media_rating": 7,
-    }
+    },
     {
       "id": 1,
       "poster": "https://m.media-amazon.com/images/M/MV5BZjVkYzY4OWEtMjc2OC00YTQ0LWIwMmUtYTRlODc3ODBmZjcxXkEyXkFqcGdeQXVyMjkyODc0ODk@._V1_UY268_CR5,0,182,268_AL_.jpg",
