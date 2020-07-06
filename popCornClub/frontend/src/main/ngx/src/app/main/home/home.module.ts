@@ -1,3 +1,4 @@
+
 import { FooterHomeComponent } from './footer-home/footer-home.component';
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
@@ -15,8 +16,7 @@ import { HomeComponent } from './home.component';
   ],
   declarations: [
     HomeComponent,
-    NewMoviesListComponent,
-    FooterHomeComponent
+    NewMoviesListComponent
   ]
 })
 export class HomeModule { }

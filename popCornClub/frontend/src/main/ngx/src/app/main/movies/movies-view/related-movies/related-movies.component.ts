@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -33,7 +34,10 @@ export class RelatedMoviesComponent implements OnInit {
     })
   };
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private router: Router,
+    private actRoute: ActivatedRoute,
+    private http: HttpClient) {
     let requestBody = {
       "filter": {
        
@@ -46,6 +50,10 @@ export class RelatedMoviesComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  navigate() {
+    this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
   }
 
 }
