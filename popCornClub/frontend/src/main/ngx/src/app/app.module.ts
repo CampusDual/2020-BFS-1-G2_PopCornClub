@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { NavbarComponent } from "./main/home/navbar/navbar.component";
+import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
+import { FooterHomeComponent } from "./main/home/footer-home/footer-home.component";
 
 import {
   APP_CONFIG,
@@ -10,8 +13,6 @@ import {
 import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { MainComponent } from "./main/main.component";
-import { NavbarComponent } from '../app/main/components/navbar/navbar.component';
 
 // Standard providers...
 // Defining custom providers (if needed)...
@@ -23,11 +24,13 @@ export const customProviders: any = [
     ONTIMIZE_MODULES,
     OntimizeWebModule,
     AppRoutingModule
-  ],
+    ],
   declarations: [
     AppComponent,
-    NavbarComponent
-    ],
+    NavbarComponent,
+    MoviesViewComponent,
+    FooterHomeComponent
+  ],
   bootstrap: [
     AppComponent
   ],

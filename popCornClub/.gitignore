@@ -9,3 +9,5 @@ bin
 node_modules
 
 target
+
+*package-lock.json

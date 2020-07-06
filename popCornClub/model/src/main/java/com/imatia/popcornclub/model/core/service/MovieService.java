@@ -9,17 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Service("MovieService")
-@Lazy
 
 public class MovieService implements IMovieService{
 
 
     @Autowired private MovieDao movieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
+    
     public EntityResult movieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.movieDao, keyMap, attrList);
     }
@@ -35,7 +36,15 @@ public class MovieService implements IMovieService{
     }
 
     @Override
-    public EntityResult movieDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult movieDelete(Map<String, Object> keyMap)
+    		throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.movieDao, keyMap);
+    }
+    
+    @Override
+    public EntityResult infoMovies(List<String> columns)
+            throws OntimizeJEERuntimeException {
+        Map<String, Object> keyMap = new HashMap<String, Object>();
+        return this.daoHelper.query(this.movieDao, keyMap, columns, "infoMovies");
     }
 }

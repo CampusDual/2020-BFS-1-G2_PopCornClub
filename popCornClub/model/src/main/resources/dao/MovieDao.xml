@@ -12,4 +12,23 @@
         <Column>id_movie</Column>
     </UpdateKeys>
     <GeneratedKey>id_movie</GeneratedKey>
+    
+    <Queries> 
+        <Query id="infoMovies">
+        <AmbiguousColumns>
+		<AmbiguousColumn name="id_movie" prefix="movie" />
+		</AmbiguousColumns>
+            <Sentence><![CDATA[select #COLUMNS#
+			from movie 
+			inner join category_has_movie on movie.id_movie = category_has_movie.id_movie
+			inner join category on category_has_movie.id_category = category.id_category
+			inner join nationality_has_movie on movie.id_movie = nationality_has_movie.id_movie
+			inner join nationality on nationality_has_movie.id_nationality = nationality.id_nationality
+			inner join casting_has_movie on movie.id_movie = casting_has_movie.id_movie
+			inner join casting on casting_has_movie.id_casting = casting.id_casting
+			inner join genre_has_movie on movie.id_movie = genre_has_movie.id_movie
+			inner join genre on genre_has_movie.id_genre = genre.id_genre;]]></Sentence>
+        </Query>
+    </Queries>
+    
 </JdbcEntitySetup>
