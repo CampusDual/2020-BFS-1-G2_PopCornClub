@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginModule } from './login/login.module';
 import { MainModule } from './main/main.module';
 import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
+import { MoviesModule } from './main/movies/movies.module';
+
 
 export function loadLoginModule() {
   return LoginModule;
