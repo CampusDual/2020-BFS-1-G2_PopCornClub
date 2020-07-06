@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MoviesViewComponent } from './main/movies/movies-view/movies-view.component';
 
+
 // Standard providers...
 // Defining custom providers (if needed)...
 export const customProviders: any = [

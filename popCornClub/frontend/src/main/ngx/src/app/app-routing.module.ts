@@ -4,6 +4,8 @@ import { LoginModule } from './login/login.module';
 import { MainModule } from './main/main.module';
 import { MoviesModule } from './main/movies/movies.module';
 
+
+
 export function loadLoginModule() {
   return LoginModule;
 }
