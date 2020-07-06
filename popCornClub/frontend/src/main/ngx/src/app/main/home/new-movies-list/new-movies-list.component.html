@@ -1,0 +1,21 @@
+<div class="row mt-5">
+  <h5>Novedades</h5>
+</div>
+<div class="row my-2">
+  <div class="col-4 mb-2" *ngFor="let movie of newMovies">
+    <div class="card">
+      <div class="card-body row">
+        <div class="col-6">
+          <img src="{{movie.poster}}" alt="Movie poster" class="img-fluid">
+        </div>
+        <div class="col-6">
+          <h5>{{movie.movie_name}}</h5>
+          <p class="movie-description">{{movie.description}}</p>
+          <div>
+            <p><i class="material-icons">grade</i><span><b>{{movie.media_rating}}</b> / 10</span></p>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
