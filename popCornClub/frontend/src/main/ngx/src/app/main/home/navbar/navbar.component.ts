@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { LoginService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  loggedIn: any = false;
+
+  constructor(
+    @Inject(LoginService) private loginService: LoginService,
+  ) {
+    this.loggedIn = loginService.isLoggedIn();
+  }
 
   ngOnInit() {
   }
