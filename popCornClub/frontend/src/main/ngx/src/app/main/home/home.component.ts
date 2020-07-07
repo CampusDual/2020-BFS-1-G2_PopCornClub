@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private actRoute: ActivatedRoute
+    private actRoute: ActivatedRoute,
     @Inject(LoginService) private loginService: LoginService,
   ) {
     this.loggedIn = loginService.isLoggedIn();
