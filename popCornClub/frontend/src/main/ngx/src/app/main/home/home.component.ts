@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoginService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'home',
@@ -8,10 +9,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  loggedIn: boolean = false;
+
   constructor(
     private router: Router,
     private actRoute: ActivatedRoute
+    @Inject(LoginService) private loginService: LoginService,
   ) {
+    this.loggedIn = loginService.isLoggedIn();
   }
 
   ngOnInit() {
