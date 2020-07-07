@@ -27,7 +27,7 @@ public class MovieRestController extends ORestController<IMovieService>{
         return this.movieService;
     }
     
-    @RequestMapping(value = "infoMovie", method = RequestMethod.GET)
+    @RequestMapping(value = "infoMovie", method = RequestMethod.POST)
 	public EntityResult getMovie(@RequestBody Map<String, Object> req) {
 		try {
 			List<String> columns = (List<String>) req.get("columns");
