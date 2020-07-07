@@ -19,7 +19,9 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService], NOTA: Añadir esta clave a la definición de un path para evitar que se pueda navegar
+    //                                        a el sin estar autenticado. En este caso queremos que un usuario pueda acceder
+    //                                        a /main sin estar autenticado, por eso está deshabilitado en esta ocasión.
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
