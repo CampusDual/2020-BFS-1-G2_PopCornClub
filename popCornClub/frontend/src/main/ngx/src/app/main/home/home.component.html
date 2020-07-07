@@ -10,7 +10,7 @@
       ¡Descubre nuevos contenidos y recomendaciones en base a tus gustos!
       Nuestro objetivo es crear un club activo donde los usuarios reciban recomendaciones y dar su opinión valorando
       los contenidos. ¡Únete a Pop Corn Club!</h5>
-    <button class="btn btn-danger">Registrate</button>
+    <button *ngIf="!loggedIn" class="btn btn-danger">Registrate</button>
   </div>
 </div>
 </div>
