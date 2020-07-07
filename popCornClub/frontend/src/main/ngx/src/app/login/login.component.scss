@@ -42,13 +42,13 @@ body {
   }
   .sidenav{
     width: 50%;
-    position: fixed;
+    position: relative;
     z-index: 1;
     top: 0;
     left: 0;
   }
   .login-form{
-    margin-top: 50%;  
+    margin-top: 0%;  
   }
 }
 .login-main-text{
