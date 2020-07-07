@@ -40,11 +40,11 @@ public class MovieService implements IMovieService{
     		throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.movieDao, keyMap);
     }
-    
+
     @Override
-    public EntityResult infoMovies(List<String> columns)
-            throws OntimizeJEERuntimeException {
-        Map<String, Object> keyMap = new HashMap<String, Object>();
+    public EntityResult infoMoviesQuery(Map<String, Object> keyMap, List<String> columns) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.movieDao, keyMap, columns, "infoMovies");
     }
+
+
 }

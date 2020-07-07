@@ -13,5 +13,5 @@ public interface IMovieService {
     public EntityResult movieInsert(Map<String, Object> attrMap)throws OntimizeJEERuntimeException;
     public EntityResult movieUpdate(Map<String, Object> attrMap, Map<String, Object>keyMap)throws OntimizeJEERuntimeException;
     public EntityResult movieDelete(Map<String, Object> keyMap)throws OntimizeJEERuntimeException;
-    public EntityResult infoMovies(List<String> columns) throws OntimizeJEERuntimeException;
+    public EntityResult infoMoviesQuery(Map<String, Object> keyMap, List<String > columns) throws OntimizeJEERuntimeException;
 }
