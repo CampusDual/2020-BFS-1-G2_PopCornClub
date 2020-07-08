@@ -20,7 +20,7 @@
 		</AmbiguousColumns>
             <Sentence>
                 <![CDATA[
-                    select #COLUMNS#
+                    select DISTINCT #COLUMNS#
 			        from movie
 			        inner join category_has_movie on movie.id_movie = category_has_movie.id_movie
 			        inner join category on category_has_movie.id_category = category.id_category
