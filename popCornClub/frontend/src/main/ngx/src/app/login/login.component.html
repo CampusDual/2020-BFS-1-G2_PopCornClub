@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 login-main-text text-center bg-dark">
+      <img src="./assets/images/popcorn.png" width="80%" class="middle">    
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    </div>
+
+  <div class="col-lg-6 col-sm-12 p-5">
+     <div class="login-form middle">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <h1>Accede a tu cuenta</h1>
+          <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
+          <div class="form-group">
+            <mat-form-field style="width:100%;">
+              <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+            </mat-form-field>
+         </div>
+         <div class="form-group">
+            <mat-form-field style="width:100%;">
+              <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
+            </mat-form-field>
+          </div>
+          <button class="btn btn-secondary btn-lg btn-block" mat-raised-button color="primary" >{{ 'LOGIN' | oTranslate }}</button>
+        </form>
+     </div>
+  </div>
+</div>
+</div>
