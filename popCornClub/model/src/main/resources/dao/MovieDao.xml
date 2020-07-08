@@ -30,6 +30,7 @@
 			        inner join casting on casting_has_movie.id_casting = casting.id_casting
 			        inner join genre_has_movie on movie.id_movie = genre_has_movie.id_movie
 			        inner join genre on genre_has_movie.id_genre = genre.id_genre
+			        #WHERE#
                 ]]>
             </Sentence>
         </Query>
