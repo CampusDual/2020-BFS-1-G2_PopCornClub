@@ -34,6 +34,19 @@
                 ]]>
             </Sentence>
         </Query>
+        
+           <Query id="lastMovies">
+            <Sentence>
+                <![CDATA[
+                    select #COLUMNS#
+			        from movie
+			        #WHERE#
+					ORDER BY premiere desc
+					LIMIT 6
+                ]]>
+            </Sentence>
+        </Query>
+        
     </Queries>
     
 </JdbcEntitySetup>
