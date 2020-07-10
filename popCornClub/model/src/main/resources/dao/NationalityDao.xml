@@ -12,4 +12,20 @@
   <Column>id_nationality</Column>
  </UpdateKeys>
  <GeneratedKey>id_nationality</GeneratedKey>
+ <Queries>
+  <Query id="nationalityMovie">
+   <AmbiguousColumns>
+    <AmbiguousColumn name="id_movie" prefix="movie" />
+   </AmbiguousColumns>
+   <Sentence>
+    <![CDATA[
+         select #COLUMNS#
+	     from movie
+	     inner join nationality_has_movie on movie.id_movie = nationality_has_movie.id_movie
+		 inner join nationality on nationality_has_movie.id_nationality = nationality.id_nationality
+         #WHERE#
+      ]]>
+   </Sentence>
+  </Query>
+ </Queries>
 </JdbcEntitySetup>
