@@ -13,5 +13,5 @@ public interface ICastingService {
  public EntityResult castingInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
  public EntityResult castingUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
  public EntityResult castingDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
-
+ public EntityResult castingMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 }

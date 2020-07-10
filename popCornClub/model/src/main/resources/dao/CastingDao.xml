@@ -12,4 +12,20 @@
   <Column>id_casting</Column>
  </UpdateKeys>
  <GeneratedKey>id_casting</GeneratedKey>
+ <Queries>
+  <Query id="castingMovie">
+   <AmbiguousColumns>
+    <AmbiguousColumn name="id_movie" prefix="movie" />
+   </AmbiguousColumns>
+   <Sentence>
+      <![CDATA[
+         select #COLUMNS#
+	     from casting
+	     inner join casting_has_movie on casting.id_casting = casting_has_movie.id_casting
+         inner join movie on movie.id_movie = casting_has_movie.id_movie
+         #WHERE#
+      ]]>
+   </Sentence>
+  </Query>
+ </Queries>
 </JdbcEntitySetup>

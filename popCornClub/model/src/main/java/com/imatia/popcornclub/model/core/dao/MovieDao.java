@@ -20,5 +20,5 @@ public class MovieDao extends OntimizeJdbcDaoSupport{
     public static final String ATTR_TRAILER = "trailer";
     public static final String ATTR_MOVIE_YEAR = "movie_year";
     public static final String ATTR_MEDIA_RATING = "media_rating";
-
+    public static final String ATTR_NATIONALITY_NAME = "nationality_name";
 }

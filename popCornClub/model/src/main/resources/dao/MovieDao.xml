@@ -16,11 +16,12 @@
     <Queries> 
         <Query id="infoMovies">
         <AmbiguousColumns>
-		<AmbiguousColumn name="id_movie" prefix="movie" />
+            <AmbiguousColumn name="id_movie" prefix="movie" />
 		</AmbiguousColumns>
             <Sentence>
                 <![CDATA[
-                    select DISTINCT #COLUMNS#
+                    select #COLUMNS#,
+                    string_agg(DISTINCT genre.genre_value , ',') as genre
 			        from movie
 			        inner join category_has_movie on movie.id_movie = category_has_movie.id_movie
 			        inner join category on category_has_movie.id_category = category.id_category
@@ -31,11 +32,12 @@
 			        inner join genre_has_movie on movie.id_movie = genre_has_movie.id_movie
 			        inner join genre on genre_has_movie.id_genre = genre.id_genre
 			        #WHERE#
+			        group by  movie.id_movie, nationality.nationality_name
                 ]]>
             </Sentence>
+
         </Query>
-        
-           <Query id="lastMovies">
+        <Query id="lastMovies">
             <Sentence>
                 <![CDATA[
                     select #COLUMNS#
@@ -46,7 +48,6 @@
                 ]]>
             </Sentence>
         </Query>
-        
     </Queries>
     
 </JdbcEntitySetup>

@@ -13,7 +13,5 @@ public interface IGenreService {
     public EntityResult genreInsert(Map<String, Object> attrMap)throws OntimizeJEERuntimeException;
     public EntityResult genreUpdate(Map<String, Object> attrMap, Map<String, Object>keyMap)throws OntimizeJEERuntimeException;
     public EntityResult genreDelete(Map<String, Object> keyMap)throws OntimizeJEERuntimeException;
-
-
-
+    public EntityResult genreMovieQuery(Map<String, Object> keyMap, List<String> attrList)throws OntimizeJEERuntimeException;
 }

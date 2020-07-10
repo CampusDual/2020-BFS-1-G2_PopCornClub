@@ -43,4 +43,8 @@ public class CastingService implements ICastingService{
   return this.daoHelper.delete(this.castingDao, keyMap);
  }
 
+ @Override
+ public EntityResult castingMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+  return this.daoHelper.query(this.castingDao, keyMap, attrList, "castingMovie");
+ }
 }

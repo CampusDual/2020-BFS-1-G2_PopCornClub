@@ -39,4 +39,9 @@ public class GenreService implements IGenreService {
         return this.daoHelper.delete(this.genreDao, keyMap);
     }
 
+    @Override
+    public EntityResult genreMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.genreDao, keyMap, attrList, "genreMovie");
+    }
+
 }

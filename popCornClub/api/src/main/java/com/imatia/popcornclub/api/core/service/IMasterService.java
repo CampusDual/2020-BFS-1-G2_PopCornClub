@@ -19,6 +19,7 @@ public interface IMasterService {
     public EntityResult nationalityInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
     public EntityResult nationalityUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
     public EntityResult nationalityDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult nationalityMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 
     //RATING
     public EntityResult ratingQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;

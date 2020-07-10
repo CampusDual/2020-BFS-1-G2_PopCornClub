@@ -68,6 +68,11 @@ public class MasterService implements IMasterService {
         return this.daoHelper.delete(this.nationalityDao, keyMap);
     }
 
+    @Override
+    public EntityResult nationalityMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.nationalityDao, keyMap, attrList, "nationalityMovie");
+    }
+
     //RATING
     @Override
     public EntityResult ratingQuery(Map<String, Object> keyMap, List<String> attrList)
