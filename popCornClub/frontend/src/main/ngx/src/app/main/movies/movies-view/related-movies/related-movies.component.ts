@@ -31,8 +31,12 @@ export class RelatedMoviesComponent implements OnInit {
         "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
       };
       http.post(this.relatedMoviesEndPoint, JSON.stringify(requestBody), this.httpOptions).subscribe(response => {
-        // FIXME: Añadir a this.relatedMovies las peliculas retornadas por el backend
-        this.relatedMovies = response["data"]
+        this.relatedMovies = [];
+        response["data"].forEach(movieToFilter => {
+          if (movieToFilter["id_movie"] != params["id"]) {
+            this.relatedMovies.push(movieToFilter);
+          }
+        });
       });
     });
   }
