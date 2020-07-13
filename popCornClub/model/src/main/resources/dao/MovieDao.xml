@@ -13,7 +13,7 @@
     </UpdateKeys>
     <GeneratedKey>id_movie</GeneratedKey>
     
-    <Queries> 
+    <Queries>
         <Query id="infoMovies">
         <AmbiguousColumns>
             <AmbiguousColumn name="id_movie" prefix="movie" />
@@ -61,6 +61,19 @@
             </Sentence>
         </Query>
         
+
+        <Query id="relatedMovies">
+            <Sentence>
+                <![CDATA[
+                    select #COLUMNS#
+                     from movie where id_movie in (select id_movie from (
+                     select id_movie, count(*) as related from genre_has_movie ghm where id_genre in (select id_genre from genre_has_movie ghm2
+                     #WHERE# and media_rating > 5) group by id_movie
+                     ) as relation where relation.related > 1
+                    ) LIMIT 3
+                ]]>
+            </Sentence>
+        </Query>
     </Queries>
     
 </JdbcEntitySetup>

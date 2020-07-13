@@ -57,5 +57,10 @@ public class MovieService implements IMovieService{
         return this.daoHelper.query(this.movieDao, keyMap, attrList, "rankMovies");
     }
 
+    @Override
+    public EntityResult relatedMoviesQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.movieDao, keyMap, attrList, "relatedMovies");
+    }
+
 
 }
