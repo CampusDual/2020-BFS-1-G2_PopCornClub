@@ -4,7 +4,6 @@ import { LoginModule } from './login/login.module';
 import { MainModule } from './main/main.module';
 import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
 import { MoviesModule } from './main/movies/movies.module';
-import { MenuRootItem } from 'ontimize-web-ngx';
 
 
 export function loadMoviesModule() {
@@ -24,10 +23,6 @@ export const routes: Routes = [
   { path: 'login', loadChildren: loadLoginModule },
   { path: 'movies', loadChildren: loadMoviesModule },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
-];
-
-export const MENU_CONFIG: MenuRootItem[] = [
-  { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
 ];
 
 const opt = {
