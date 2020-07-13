@@ -5,6 +5,7 @@ import { MainModule } from './main/main.module';
 import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
 import { MoviesModule } from './main/movies/movies.module';
 
+
 export function loadMoviesModule() {
   return MoviesModule;
 }
