@@ -48,6 +48,19 @@
                 ]]>
             </Sentence>
         </Query>
+        
+        <Query id="rankMovies">
+            <Sentence>
+                <![CDATA[
+                    select #COLUMNS#
+			        from movie
+			        #WHERE#
+					ORDER BY media_rating desc
+					LIMIT 10
+                ]]>
+            </Sentence>
+        </Query>
+        
     </Queries>
     
 </JdbcEntitySetup>
