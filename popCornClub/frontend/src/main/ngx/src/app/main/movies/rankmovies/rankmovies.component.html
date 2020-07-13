@@ -1,8 +1,30 @@
-<div class="container">
-  <div class="row my-4">
-    <div class="col-4 mb-4 movie-card" *ngFor="let movies of rankMovies">
-      <a href="/main/movies/view/{{movie.id_movie}}">
-
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3>Ranking</h3>
+    <p>¡Descubre las películas mejor valoradas por nuestros/as usuarios/as y descubre nuevos títulos para ver! </p>
+  </div>
+</div>
+<div class="container mt-4">
+  <div class="row my-12 mb-5">
+    <div class="col-12 mb-4 movie-rank-card" *ngFor="let movie of movies; index as i">
+        <a href="/main/movies/view/{{movie.id_movie}}">
+        <div class="card">
+        <div class="card-body row">
+         <p class="rank col-2 pb-3">
+           {{i+1}}
+        </p>
+          <div class="col-2">
+            <img src="{{movie.poster}}" alt="Movie poster" class="img-card">
+          </div>
+          <div class="col-8">
+            <h5>{{movie.movie_name}}</h5>
+            <p class="movie-description">{{movie.description}}</p>
+            <div>
+              <p><i class="material-icons">grade</i><span><b>{{movie.media_rating}}</b> / 10</span></p>
+            </div>
+          </div>
+        </div>  
+      </div>
       </a>
     </div>
   </div>
