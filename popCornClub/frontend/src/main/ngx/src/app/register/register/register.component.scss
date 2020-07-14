@@ -1,0 +1,54 @@
+.bg-cinema{
+    background-image: url(../../../assets/images/3419571.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+  
+body {
+    font-family: "Lato", sans-serif;
+  }
+  h2{
+    margin-top: 10px;
+  }
+  
+  .row {
+    height: 85vh;
+  }
+  
+  .middle {
+    margin-top: 10%;
+  }
+  
+  .main {
+    padding: 0px 10px;
+    position: relative;
+    text-align: center;
+    left: 15%;  
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+  
+  }
+  
+  
+  @media screen and (min-width: 768px){
+    h1{
+      font-weight: bolder;
+    }
+   
+  }
+  .login-main-text{
+    padding: 60px;
+    color: #fff;  
+  }
+  .btn-black{
+    background-color: #000 !important;
+    color: #fff;
+  }
+  
+  .btn-block {
+      background-color: #232323;
+      height: 36px;
+      font-size: 14px;
+  }
