@@ -48,7 +48,6 @@
                 ]]>
             </Sentence>
         </Query>
-
         <Query id="relatedMovies">
             <Sentence>
                 <![CDATA[
@@ -58,6 +57,17 @@
                      #WHERE# and media_rating > 5) group by id_movie
                      ) as relation where relation.related > 1
                     ) LIMIT 3
+                ]]>
+            </Sentence>
+        </Query>
+        <Query id="rankMovies">
+            <Sentence>
+                <![CDATA[
+                    select #COLUMNS#
+			        from movie
+			        #WHERE#
+					ORDER BY media_rating desc
+					LIMIT 10
                 ]]>
             </Sentence>
         </Query>
