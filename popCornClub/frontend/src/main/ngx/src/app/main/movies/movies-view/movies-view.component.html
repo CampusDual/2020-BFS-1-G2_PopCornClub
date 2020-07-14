@@ -7,7 +7,7 @@
       <div class="col-8">
         <h3>{{movie.movie_name}}</h3>
         <p>{{movie.movie_year}} | {{movie.duration}} min | {{nationality.nationality_name}}</p>
-        <p class="movie-rating"><i class="material-icons score-star">grade</i><span><b>{{movie.media_rating}}</b> / 10</span><a href="#">DA TU VALORACION</a></p>
+        <p class="movie-rating"><i class="material-icons score-star">grade</i><span><b>{{movie.media_rating}}</b> / 10</span><a href="#" *ngIf="canRate" data-toggle="modal" data-target="#ratingModal">DA TU VALORACION</a></p>
         <p>{{movie.description}}</p>
         <p class="tag-list" >
           <span class="badge badge-secondary" *ngFor="let genre of genres">{{genre.genre_value}}</span>
@@ -20,5 +20,29 @@
     <div class="col-4">
       <app-related-movies></app-related-movies>
     </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div id="ratingModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Da tu valoración</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h5>Nota:</h5>
+        <input type="number" class="form-control" #userRatingInput value="5.0" min="1" max="10">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" (click)="onUserRate()">Valorar</button>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -5,11 +5,11 @@ import com.imatia.popcornclub.model.core.dao.*;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
-import com.ontimize.jee.server.dao.IOntimizeDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +29,7 @@ public class MasterService implements IMasterService {
     @Autowired private GenreHasMovieDao genreHasMovieDao;
     @Autowired private NationalityHasMovieDao nationalityHasMovieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
-
+    @Autowired private MovieDao movieDao;
 
 
     //CATEGORY
