@@ -32,12 +32,5 @@ export class PopcornService implements OnInit {
         //return this.http.post('http://localhost:33333/movies/movie/search',JSON.stringify(requestBody), {headers});
         return this.http.get(`http://localhost:33333/movies/movie?columns=${termino}`, {headers});
     }
-    /*getSearch(): Observable<any[]>{
-        const headers = new HttpHeaders({
-            'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg=='
-        });
-        return this.http.get<any>('http://localhost:33333/movies/movie?columns=movie_name', {headers});
-    }*/
-
     
 }
