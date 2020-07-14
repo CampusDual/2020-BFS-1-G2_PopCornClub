@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-12">
+      <h2>Formulario de registro</h2>
+    </div>
+    <div class="col-12">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <div class="form-group">
+            <label for="inputEmail">Correo electrónico</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Introduce un correo" #inputEmail>
+          </div>
+          <div class="form-group">
+            <label for="inputNick">Nombre de usuario</label>
+            <input type="text" class="form-control" id="inputNick" placeholder="Introduce un nombre de usuario" #inputNick>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Contraseña</label>
+            <input type="text" class="form-control" id="inputPassword" placeholder="Introduce tu contraseña" #inputPassword>
+          </div>
+          <div class="form-group">
+            <label for="inputName">Nombre</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Introduce tu nombre" #inputName>
+          </div>
+          <div class="form-group">
+            <label for="inputSurname">Apellidos</label>
+            <input type="text" class="form-control" id="inputSurname" placeholder="Introduce tus apellidos" #inputSurname>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
