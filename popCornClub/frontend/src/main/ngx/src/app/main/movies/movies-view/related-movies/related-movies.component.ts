@@ -9,24 +9,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class RelatedMoviesComponent implements OnInit {
 
-  relatedMovies = [
-    {
-      "id": 5,
-      "poster": "https://m.media-amazon.com/images/M/MV5BZjVkYzY4OWEtMjc2OC00YTQ0LWIwMmUtYTRlODc3ODBmZjcxXkEyXkFqcGdeQXVyMjkyODc0ODk@._V1_UY268_CR5,0,182,268_AL_.jpg",
-      "movie_name": "Indiana Jones y el santuario de la orden negra",
-      "description": "1938. A group of American archaeologists are taken prisoners in the Castle of Wewelsburg. Indiana Jones with Sallah and Husani will travel to the Nazi Vatican, to discover the last and the darkest plan of the Third Reich.",
-      "media_rating": 7,
-    },
-    {
-      "id": 1,
-      "poster": "https://m.media-amazon.com/images/M/MV5BZjVkYzY4OWEtMjc2OC00YTQ0LWIwMmUtYTRlODc3ODBmZjcxXkEyXkFqcGdeQXVyMjkyODc0ODk@._V1_UY268_CR5,0,182,268_AL_.jpg",
-      "movie_name": "Indiana Jones y el santuario de la orden negra",
-      "description": "1938. A group of American archaeologists are taken prisoners in the Castle of Wewelsburg. Indiana Jones with Sallah and Husani will travel to the Nazi Vatican, to discover the last and the darkest plan of the Third Reich.",
-      "media_rating": 7,
-    }
-  ];
+  relatedMovies = [];
 
-  relatedMoviesEndPoint = "http://localhost:33333/movies/movie";
+  relatedMoviesEndPoint = "http://localhost:33333/movies/relatedMovies/search";
   httpOptions = {
     headers: new HttpHeaders({
       'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg==',
@@ -38,16 +23,23 @@ export class RelatedMoviesComponent implements OnInit {
     private router: Router,
     private actRoute: ActivatedRoute,
     private http: HttpClient) {
-    let requestBody = {
-      "filter": {
-       
-      },
-      "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
-    };
-    http.post(this.relatedMoviesEndPoint, JSON.stringify(requestBody), this.httpOptions).subscribe(response => {
-      // FIXME: Añadir a this.relatedMovies las peliculas retornadas por el backend
+    actRoute.params.subscribe((params) => {
+      let requestBody = {
+        "filter": {
+          "id_movie": Number(params["id"])
+        },
+        "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
+      };
+      http.post(this.relatedMoviesEndPoint, JSON.stringify(requestBody), this.httpOptions).subscribe(response => {
+        this.relatedMovies = [];
+        response["data"].forEach(movieToFilter => {
+          if (movieToFilter["id_movie"] != params["id"]) {
+            this.relatedMovies.push(movieToFilter);
+          }
+        });
+      });
     });
-   }
+  }
 
   ngOnInit() {
   }
