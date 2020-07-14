@@ -12,7 +12,7 @@ import { HomeModule } from './home/home.module';
     OntimizeWebModule,
     MainRoutingModule,
     HomeModule
-  ],
+    ],
   declarations: [
     MainComponent
   ]

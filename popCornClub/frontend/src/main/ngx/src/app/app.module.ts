@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
+import { SearchComponent } from './main/home/search/search.component';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from "./main/home/navbar/navbar.component";
 import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
+
 
 import {
   APP_CONFIG,
@@ -30,7 +33,8 @@ export const customProviders: any = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterHomeComponent
+    FooterHomeComponent,
+    SearchComponent
   ],
   bootstrap: [
     AppComponent
