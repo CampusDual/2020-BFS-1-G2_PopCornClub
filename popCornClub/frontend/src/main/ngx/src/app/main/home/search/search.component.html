@@ -1,5 +1,29 @@
 <form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2 search-custom"  #termino (keyup)= "search(termino.value)" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-light my-2 my-sm-0 btn-custom" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
- <form>
+  <input class="form-control mr-sm-2 search-custom"  #termino (keyup.enter)= "searchMovie(termino.value)" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-light my-2 my-sm-0 btn-custom" (click)= "searchMovie(termino.value)" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+<form>
 
+  <div class="container">
+    <div class="row my-4">
+      <div class="col-4 mb-4 movie-card" *ngFor="let movie of movies">
+        <a href="/main/movies/view/{{movie.id_movie}}">
+        <div class="card">
+          <div class="card-body row">
+            <div class="col-6">
+              <img src="{{movie.poster}}" alt="Movie poster" class="img-fluid">
+            </div>
+            <div class="col-6">
+              <h5>{{movie.movie_name}}</h5>
+              <p class="movie-description">{{movie.description}}</p>
+              <div>
+                <p><i class="material-icons">grade</i><span><b>{{movie.media_rating}}</b> / 10</span></p>
+              </div>
+            </div>
+          </div>  
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  

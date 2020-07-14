@@ -14,20 +14,19 @@ export class SearchComponent implements OnInit {
   constructor(private popcorn: PopcornService, private router: Router) { }
 
   ngOnInit() {
-    //this.getData
   }
 
-  search(termino : string){
-
-    this.popcorn.getMovie(termino)
-    .subscribe(response =>{
-      console.log(this.movies.item);
+  searchMovie(termino : String){
+    
+    this.popcorn.getMovie(termino).subscribe(response =>{      
       this.movies = response["data"];
-    });
+      console.log(this.movies);
+       //console.log(termino)
+    });      
   }
   
-  onSelected(item){
+  /*onSelected(item){
     this.router.navigate(["/main/home/new-movies-list", item.movie_id])
-  }
+  }*/
 }
 
