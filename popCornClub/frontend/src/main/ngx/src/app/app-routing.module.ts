@@ -4,6 +4,7 @@ import { LoginModule } from './login/login.module';
 import { MainModule } from './main/main.module';
 import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
 import { MoviesModule } from './main/movies/movies.module';
+import { load } from '@angular/core/src/render3/instructions';
 
 export function loadMoviesModule() {
   return MoviesModule;
