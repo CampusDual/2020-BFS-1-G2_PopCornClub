@@ -44,7 +44,7 @@ export class MoviesViewComponent implements OnInit {
         "filter": {
           "id_movie": Number(params["id"])
         },
-        "columns": ["genre_value"]
+        "columns": ["id_genre", "genre_value"]
       };
 
 
@@ -58,6 +58,7 @@ export class MoviesViewComponent implements OnInit {
       });
  
       http.post(this.genresEndPoint, JSON.stringify(genreRequestBody), this.httpOptions).subscribe(response => {
+        console.log(response);
         this.genres = response["data"];
       });
 

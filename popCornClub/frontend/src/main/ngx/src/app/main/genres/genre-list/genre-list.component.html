@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3>Películas por género: {{genre}}</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-4 mb-4 movie-card" *ngFor="let movie of movies">
+      <a href="/main/movies/view/{{movie.id_movie}}">
+      <div class="card">
+        <div class="card-body row">
+          <div class="col-6">
+            <img src="{{movie.poster}}" alt="Movie poster" class="img-fluid">
+          </div>
+          <div class="col-6">
+            <h5>{{movie.movie_name}}</h5>
+            <p class="movie-description">{{movie.description}}</p>
+            <div>
+              <p><i class="material-icons">grade</i><span><b>{{movie.media_rating}}</b> / 10</span></p>
+            </div>
+          </div>
+        </div>  
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
