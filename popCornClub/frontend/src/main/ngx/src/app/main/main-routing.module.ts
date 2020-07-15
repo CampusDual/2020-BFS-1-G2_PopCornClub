@@ -17,10 +17,6 @@ export function loadMoviesModule() {
   return MoviesModule;
 }
 
-export function loadGenresModule() {
-  return GenresModule;
-}
-
 export const routes: Routes = [
   {
     path: '',
@@ -37,10 +33,6 @@ export const routes: Routes = [
       {
         path: 'movies',
         loadChildren: loadMoviesModule
-      },
-      {
-        path: 'genres',
-        loadChildren: loadGenresModule
       }
     ]
   }

@@ -27,12 +27,13 @@ export function loadRegisterModule() {
 export function loadGenresModule(){
   return GenresModule;
 }
+
 export const routes: Routes = [
   { path: 'main', loadChildren: loadMainModule },
   { path: 'login', loadChildren: loadLoginModule },
   { path: 'register', loadChildren: loadRegisterModule },
   { path: 'movies', loadChildren: loadMoviesModule },
-  { path: 'genres', loadChildren: loadMainModule },
+  { path: 'genres', loadChildren: loadGenresModule },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 

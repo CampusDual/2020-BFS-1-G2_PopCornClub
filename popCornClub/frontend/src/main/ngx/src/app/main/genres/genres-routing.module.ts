@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
  
 
 const routes: Routes = [
-  {path: 'genres/view/:id', component: GenreListComponent},
+  {path: 'view/:id', component: GenreListComponent},
 ];
 
 @NgModule({
