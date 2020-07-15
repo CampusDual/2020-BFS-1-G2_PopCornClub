@@ -30,6 +30,7 @@ public class MasterService implements IMasterService {
     @Autowired private NationalityHasMovieDao nationalityHasMovieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
     @Autowired private MovieDao movieDao;
+    @Autowired private WishListDao wishlistDao;
 
 
     //CATEGORY
@@ -97,23 +98,23 @@ public class MasterService implements IMasterService {
     //WISHLIST
 
     @Override
-    public EntityResult wishListQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
-        return null;
+    public EntityResult wishlistQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+            return this.daoHelper.query(this.wishlistDao, keyMap, attrList);
     }
 
     @Override
-    public EntityResult wishListInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-        return null;
+    public EntityResult wishlistInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.insert(this.wishlistDao, attrMap);
     }
 
     @Override
-    public EntityResult wishListUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        return null;
+    public EntityResult wishlistUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.update(this.wishlistDao, attrMap, keyMap);
     }
 
     @Override
-    public EntityResult wishListDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        return null;
+    public EntityResult wishlistDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.delete(this.wishlistDao, keyMap);
     }
 
 

@@ -61,7 +61,7 @@ export class MoviesViewComponent implements OnInit {
           "USER_": loginService.user
         },
         "columns": ["ID_USER"]
-      }
+      } 
 
 
       http.post(this.moviesEndPoint, JSON.stringify(movieRequestBody), this.httpOptions).subscribe(response => {
