@@ -21,12 +21,15 @@ export class NavbarComponent implements OnInit {
   }
   searchMovie(termino : String){
     
-    this.popcorn.getMovie(termino).subscribe(response =>{      
-      this.movies = response["data"];
-      console.log(this.movies);
+    window.location.href='/movies/list;search=' + termino;
+    //this.router.navigate(['/movies/list', { search: termino }]);
+    
+    //this.popcorn.getMovie(termino).subscribe(response =>{      
+     // this.movies = response["data"];
+     // console.log(this.movies);
        //console.log(termino)
-    });      
-  }
+    };      
+
   
   ngOnInit() {
   }
