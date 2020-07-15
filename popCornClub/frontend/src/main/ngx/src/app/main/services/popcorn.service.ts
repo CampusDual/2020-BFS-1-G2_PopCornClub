@@ -39,7 +39,7 @@ export class PopcornService implements OnInit {
             "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
           };
         
-        return this.http.post<any>('http://localhost:33333/movies/infoMovies/search', requestBody,{headers});
+        return this.http.post<any>('http://localhost:33333/movies/searchMovies/search', requestBody,{headers});
     }  
     
     /*getGenre(termino: String){
