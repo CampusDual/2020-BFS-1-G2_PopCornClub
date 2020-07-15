@@ -93,6 +93,30 @@ public class MasterService implements IMasterService {
         return this.daoHelper.delete(this.ratingDao, keyMap);
     }
 
+
+    //WISHLIST
+
+    @Override
+    public EntityResult wishListQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return null;
+    }
+
+    @Override
+    public EntityResult wishListInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        return null;
+    }
+
+    @Override
+    public EntityResult wishListUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return null;
+    }
+
+    @Override
+    public EntityResult wishListDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return null;
+    }
+
+
     //CASTING_HAS_MOVIE
     @Override
     public EntityResult castingHasMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
