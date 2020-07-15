@@ -25,7 +25,6 @@ export class PopcornService implements OnInit {
     }
     getMovie(termino: String){
         
-        //termino = termino.toLocaleLowerCase();
         console.log(termino);
         const headers = new HttpHeaders({
             'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg==',
@@ -41,22 +40,5 @@ export class PopcornService implements OnInit {
         
         return this.http.post<any>('http://localhost:33333/movies/searchMovies/search', requestBody,{headers});
     }  
-    
-    /*getGenre(termino: String){
-        
-        const headers = new HttpHeaders({
-            'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg==',
-            'Content-Type': 'application/json'
-        });
-
-          let genreRequestBody = {
-            "filter": {
-              "genre_value": termino
-            },
-            "columns": ["genre_value"]
-          };
-        
-        return this.http.post<any>('http://localhost:33333/genres/genreMovie/search', genreRequestBody,{headers});
-    }   */
 } 
   

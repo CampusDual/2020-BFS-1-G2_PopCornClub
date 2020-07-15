@@ -1,5 +1,5 @@
+import { SearchListComponent } from './main/search/search-list/search-list.component';
 import { HttpClient } from '@angular/common/http';
-import { SearchComponent } from './main/home/search/search.component';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from "./main/home/navbar/navbar.component";
 import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.component";
@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterHomeComponent } from './main/home/footer-home/footer-home.component';
 
 
+
 // Standard providers...
 // Defining custom providers (if needed)...
 export const customProviders: any = [
@@ -34,7 +35,8 @@ export const customProviders: any = [
     AppComponent,
     NavbarComponent,
     FooterHomeComponent,
-    SearchComponent
+    SearchListComponent
+    
   ],
   bootstrap: [
     AppComponent
