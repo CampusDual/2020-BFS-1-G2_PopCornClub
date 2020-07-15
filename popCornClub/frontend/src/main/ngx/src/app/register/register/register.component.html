@@ -34,7 +34,8 @@
             <label for="inputSurname">Apellidos</label>
             <input type="text" class="form-control" id="inputSurname" placeholder="Introduce tus apellidos" #inputSurname>
           </div>
-          <button type="submit" class="btn btn-secondary btn-lg btn-block"  mat-raised-button color="primary">Registrarse</button>
+          <!-- Arreglar esto, el formulario puede enviarse sin datos -->
+          <button type="submit" class="btn btn-secondary btn-lg btn-block redirect-button" mat-raised-button color="primary"><a [routerLink]="['registercomplete']">Registrarse</a></button>
         </fieldset>
       </form>
     </div>

@@ -14,8 +14,12 @@ export class NavbarComponent implements OnInit {
     @Inject(LoginService) private loginService: LoginService,
   ) {
     this.loggedIn = loginService.isLoggedIn();
+    //loginService.onLogin.subscribe( () => this.loggedIn = true );
+    //loginService.onLogout.subscribe( () => { this.loggedIn = false;
+    //console.log("logged out event");});
   }
 
+  
   ngOnInit() {
   }
 
