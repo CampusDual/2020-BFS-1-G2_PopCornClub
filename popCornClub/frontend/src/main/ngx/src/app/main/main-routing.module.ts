@@ -1,3 +1,4 @@
+import { GenresModule } from './genres/genres.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
@@ -6,6 +7,7 @@ import { MainComponent } from './main.component';
 import { HomeModule } from './home/home.module';
 import { MoviesModule } from './movies/movies.module';
 
+
 export function loadHomeModule() {
   return HomeModule;
 }
@@ -13,6 +15,10 @@ export function loadHomeModule() {
 
 export function loadMoviesModule() {
   return MoviesModule;
+}
+
+export function loadGenresModule() {
+  return GenresModule;
 }
 
 export const routes: Routes = [
@@ -31,6 +37,10 @@ export const routes: Routes = [
       {
         path: 'movies',
         loadChildren: loadMoviesModule
+      },
+      {
+        path: 'genres',
+        loadChildren: loadGenresModule
       }
     ]
   }
