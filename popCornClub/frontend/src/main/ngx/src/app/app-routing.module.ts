@@ -1,3 +1,4 @@
+import { GenresModule } from './main/genres/genres.module';
 import { NgModule, NgModuleFactory } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginModule } from './login/login.module';
@@ -23,11 +24,16 @@ export function loadRegisterModule() {
   return RegisterModule;
 }
 
+export function loadGenresModule(){
+  return GenresModule;
+}
+
 export const routes: Routes = [
   { path: 'main', loadChildren: loadMainModule },
   { path: 'login', loadChildren: loadLoginModule },
   { path: 'register', loadChildren: loadRegisterModule },
   { path: 'movies', loadChildren: loadMoviesModule },
+  { path: 'genres', loadChildren: loadGenresModule },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
