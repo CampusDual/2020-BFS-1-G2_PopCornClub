@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LoginService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-movies-view',
@@ -12,13 +13,21 @@ export class MoviesViewComponent implements OnInit {
   casting = [];
   nationality = [];
   genres = [];
+  canRate = false;
+  @ViewChild("userRatingInput") userRatingInput: any;
+  httpClient = null;
+  movieId: Number = -1;
+  idUser: Number = 1;
 
   constructor(
     private router: Router,
     private actRoute: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    @Inject(LoginService) private loginService: LoginService,
   ) {
+    this.httpClient = http;
     actRoute.params.subscribe((params) => {
+      this.movieId = Number(params["id"]);
       let movieRequestBody = {
         "filter": {
           "id_movie": Number(params["id"])
@@ -47,6 +56,13 @@ export class MoviesViewComponent implements OnInit {
         "columns": ["id_genre", "genre_value"]
       };
 
+      let getUserIdBody = {
+        "filter": {
+          "USER_": loginService.user
+        },
+        "columns": ["ID_USER"]
+      }
+
 
       http.post(this.moviesEndPoint, JSON.stringify(movieRequestBody), this.httpOptions).subscribe(response => {
         this.movie = response["data"][0];
@@ -54,7 +70,6 @@ export class MoviesViewComponent implements OnInit {
 
       http.post(this.nationalityEndPoint, JSON.stringify(nationalityRequestBody), this.httpOptions).subscribe(response => {
         this.nationality = response["data"][0];
-        console.log(this.nationality);
       });
  
       http.post(this.genresEndPoint, JSON.stringify(genreRequestBody), this.httpOptions).subscribe(response => {
@@ -65,14 +80,34 @@ export class MoviesViewComponent implements OnInit {
       http.post(this.castingEndPoint, JSON.stringify(castingRequestBody), this.httpOptions).subscribe(response => {
         this.casting = response["data"];
       });
+
+      http.post(this.usersEndPoint, JSON.stringify(getUserIdBody), this.httpOptions).subscribe(response => {
+        this.idUser = Number(response["data"][0]["ID_USER"]);
+        let canRateRequestBody = {
+          "filter": {
+            "id_user": this.idUser,
+            "id_movie": Number(params["id"])
+          },
+          "columns": ["id_rating"]
+        };
+
+        http.post(this.canRateEndPoint, JSON.stringify(canRateRequestBody), this.httpOptions).subscribe(response => {
+            this.canRate = !Array.isArray(response["data"]);
+        });
+      });
+
+      
      
     });
   }
 
+  usersEndPoint = "http://localhost:33333/users/user/search";
   moviesEndPoint = "http://localhost:33333/movies/movie/search";
   castingEndPoint = "http://localhost:33333/castings/castingMovie/search";
   nationalityEndPoint = "http://localhost:33333/master/nationalityMovie/search";
   genresEndPoint = "http://localhost:33333/genres/genreMovie/search";
+  canRateEndPoint = "http://localhost:33333/ratings/rating/search";
+  ratingsEndPoint = "http://localhost:33333/ratings/rating";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -80,6 +115,20 @@ export class MoviesViewComponent implements OnInit {
       'Content-Type': 'application/json'
     })
   };
+
+  onUserRate(){
+    let ratingsRequestBody = {
+      "data": {
+        "id_user": this.idUser,
+        "id_movie": this.movieId,
+        "rating_value": Number(this.userRatingInput.nativeElement.value)
+      }
+    };
+    this.httpClient.post(this.ratingsEndPoint, JSON.stringify(ratingsRequestBody)).subscribe(response => {
+      console.log(response);
+    });
+
+  }
 
   ngOnInit() {
   }

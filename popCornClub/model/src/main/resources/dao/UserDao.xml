@@ -19,6 +19,7 @@
                 <Column>PASSWORD</Column>
                 <Column>NAME</Column>
                 <Column>SURNAME</Column>
+                <Column>ID_USER</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
