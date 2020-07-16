@@ -49,10 +49,10 @@ public class RatingService implements IRatingService{
  }
 
  private float calculateAverageRating (EntityResult allRatingsForMovie) {
-  int ratingsNumbers = allRatingsForMovie.calculateRecordNumber();
-  int ratingsSum = 0;
+  float ratingsNumbers = allRatingsForMovie.calculateRecordNumber();
+  float ratingsSum = 0;
   for (int i = 0 ; i < ratingsNumbers; i++) {
-   ratingsSum = ratingsSum + (int) allRatingsForMovie.getRecordValues(i).get("rating_value");
+   ratingsSum = ratingsSum + (float) allRatingsForMovie.getRecordValues(i).get("rating_value");
   }
   return ratingsSum / ratingsNumbers;
  }
