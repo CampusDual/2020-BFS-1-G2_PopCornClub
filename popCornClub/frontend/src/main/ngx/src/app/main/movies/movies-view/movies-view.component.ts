@@ -120,11 +120,15 @@ export class MoviesViewComponent implements OnInit {
       "data": {
         "id_user": this.idUser,
         "id_movie": this.movieId,
-        "rating_value": Number(this.userRatingInput.nativeElement.value)
+        "rating_value": parseFloat(this.userRatingInput.nativeElement.value)
       }
     };
-    this.httpClient.post(this.ratingsEndPoint, JSON.stringify(ratingsRequestBody)).subscribe(response => {
+
+    console.log(ratingsRequestBody);
+    this.httpClient.post(this.ratingsEndPoint, JSON.stringify(ratingsRequestBody), this.httpOptions).subscribe(response => {
       console.log(response);
+      this.canRate = false;
+      window.location.reload();
     });
 
   }
