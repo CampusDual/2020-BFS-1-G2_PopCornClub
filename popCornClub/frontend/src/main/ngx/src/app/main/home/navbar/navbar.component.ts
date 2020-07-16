@@ -13,7 +13,9 @@ export class NavbarComponent implements OnInit {
   constructor(
     @Inject(LoginService) private loginService: LoginService,
   ) {
-    this.loggedIn = loginService.isLoggedIn();
+    setInterval(() => {
+      this.loggedIn = loginService.isLoggedIn();
+    }, 500);
   }
 
   ngOnInit() {

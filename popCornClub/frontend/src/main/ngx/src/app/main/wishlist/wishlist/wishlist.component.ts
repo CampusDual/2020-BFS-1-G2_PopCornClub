@@ -21,14 +21,6 @@ export class WishlistComponent implements OnInit {
       'Content-Type': 'application/json'
     })
   };
-
-  httpOptions2 = {
-    headers: new HttpHeaders({
-      'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg==',
-      
-    })
-  };
-
   constructor(
     private http: HttpClient,
     @Inject(LoginService) private loginService: LoginService
@@ -66,13 +58,13 @@ export class WishlistComponent implements OnInit {
     });
   }
 
-  onDeleteMovieFromWishlist(movieId) {
+  onDeleteMovieFromWishlist(movieId : any) {
     let movieDeleteBody = {
       "filter": {
         "id_movie": Number(movieId)
       }
     };
-    this.httpClient.delete(this.wishlistMovieDeleteEndpoint,movieDeleteBody, this.httpOptions2).subscribe(response => {
+    this.httpClient.delete(this.wishlistMovieDeleteEndpoint,movieDeleteBody, this.httpOptions).subscribe(response => {
       console.log(response);
       this.moviesOnWishlist = this.moviesOnWishlist.filter((movie) => Number(movie["id_movie"]) != Number(movieId));
     });
