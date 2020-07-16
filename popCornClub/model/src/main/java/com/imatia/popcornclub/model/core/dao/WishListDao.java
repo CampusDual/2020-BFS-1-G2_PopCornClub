@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.ontimize.jee.server.dao.common.ConfigurationFile;
 import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 
-@Repository("WishListDao")
+@Repository("wishlistDao")
 @Lazy
 @ConfigurationFile(configurationFile = "dao/WishList.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class WishListDao extends OntimizeJdbcDaoSupport{

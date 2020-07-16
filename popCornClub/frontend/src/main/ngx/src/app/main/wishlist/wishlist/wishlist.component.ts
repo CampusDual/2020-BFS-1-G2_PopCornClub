@@ -51,6 +51,7 @@ export class WishlistComponent implements OnInit {
             },
             "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
           };
+
           http.post(this.movieInfoEndpoint, JSON.stringify(movieInfoBody), this.httpOptions).subscribe(response => {
             this.moviesOnWishlist.push(response["data"][0]);
           });

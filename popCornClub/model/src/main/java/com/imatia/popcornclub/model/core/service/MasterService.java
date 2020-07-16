@@ -98,7 +98,8 @@ public class MasterService implements IMasterService {
     //WISHLIST
 
     @Override
-    public EntityResult wishlistQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+    public EntityResult wishlistQuery(Map<String, Object> keyMap, List<String> attrList)
+            throws OntimizeJEERuntimeException {
             return this.daoHelper.query(this.wishlistDao, keyMap, attrList);
     }
 
