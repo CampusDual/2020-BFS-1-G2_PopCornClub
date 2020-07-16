@@ -3,6 +3,7 @@
     <div class="col-8 row">
       <div class="col-4">
         <img src="{{movie.poster}}" alt="Movie Poster" class="img-fluid">
+        <button *ngIf="!inWishlist" class="btn btn-block btn-outline-success mt-2" (click)="addToWishlist(movie.movie_id)">Añadir a la lista de deseos</button>
       </div>
       <div class="col-8">
         <h3>{{movie.movie_name}}</h3>

@@ -14,11 +14,18 @@ export class WishlistComponent implements OnInit {
   usersEndpoint = "http://localhost:33333/users/user/search";
   wishlistEndpoint = "http://localhost:33333/master/wishlist/search";
   movieInfoEndpoint = "http://localhost:33333/movies/movie/search";
-  movieDeleteEndpoint = "http://localhost:33333/movies/movie";
+  wishlistMovieDeleteEndpoint = "http://localhost:33333/master/wishlist";
   httpOptions = {
     headers: new HttpHeaders({
       'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg==',
       'Content-Type': 'application/json'
+    })
+  };
+
+  httpOptions2 = {
+    headers: new HttpHeaders({
+      'Authorization': 'Basic ZGVtbzpkZW1vdXNlcg==',
+      
     })
   };
 
@@ -44,14 +51,13 @@ export class WishlistComponent implements OnInit {
 
       http.post(this.wishlistEndpoint, JSON.stringify(requestBody), this.httpOptions).subscribe(response => {
         response["data"].forEach(movieIdElement => {
-          let movieId = movieIdElement["id_movie"];
+          let movieId: Number = Number(movieIdElement["id_movie"]);
           let movieInfoBody = {
             "filter": {
               "id_movie": movieId
             },
             "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
           };
-
           http.post(this.movieInfoEndpoint, JSON.stringify(movieInfoBody), this.httpOptions).subscribe(response => {
             this.moviesOnWishlist.push(response["data"][0]);
           });
@@ -63,12 +69,14 @@ export class WishlistComponent implements OnInit {
   onDeleteMovieFromWishlist(movieId) {
     let movieDeleteBody = {
       "filter": {
-        "id_movie": movieId
+        "id_movie": Number(movieId)
       }
     };
-    this.httpClient.delete(this.movieDeleteEndpoint, JSON.stringify(movieDeleteBody), this.httpOptions).subscribe(response => {
+    this.httpClient.delete(this.wishlistMovieDeleteEndpoint,movieDeleteBody, this.httpOptions2).subscribe(response => {
       console.log(response);
+      this.moviesOnWishlist = this.moviesOnWishlist.filter((movie) => Number(movie["id_movie"]) != Number(movieId));
     });
+    return;
   }
 
   ngOnInit() {

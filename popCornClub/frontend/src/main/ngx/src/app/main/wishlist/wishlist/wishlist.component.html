@@ -1,1 +1,28 @@
-<span *ngFor="let movie of moviesOnWishList">{{movie_name}}</span>
+<div class="container">
+  <div class="row my-2">
+    <h2>Tu lista de películas que has guardado para ver</h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row my-4">
+      <div class="col-4 mb-4 movie-card" *ngFor="let movie of moviesOnWishlist">
+        <!-- <a (click)="onDeleteMovieFromWishlist(movie.id_movie)" class="delete-button"><i class="material-icons mt-3 ml-3">cancel</i></a> -->
+        <a href="/main/movies/view/{{movie.id_movie}}">
+        <div class="card">
+          <div class="card-body row">
+            <div class="col-6">
+              <img src="{{movie.poster}}" alt="Movie poster" class="img-fluid">
+            </div>
+            <div class="col-6">
+              <h5>{{movie.movie_name}}</h5>
+              <p class="movie-description">{{movie.description}}</p>
+              <div>
+                <p><i class="material-icons">grade</i><span><b>{{movie.media_rating}}</b> / 10</span></p>
+              </div>
+            </div>
+          </div>  
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
