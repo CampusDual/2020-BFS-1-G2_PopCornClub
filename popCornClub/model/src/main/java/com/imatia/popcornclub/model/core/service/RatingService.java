@@ -1,5 +1,7 @@
 package com.imatia.popcornclub.model.core.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +22,7 @@ public class RatingService implements IRatingService{
 
  @Autowired private RatingDao ratingDao;
  @Autowired private DefaultOntimizeDaoHelper daoHelper;
+ @Autowired private MovieService movieService;
  
  @Override
  public EntityResult ratingQuery(Map<String, Object> keyMap, List<String> attrList)
@@ -29,7 +32,29 @@ public class RatingService implements IRatingService{
 
  @Override
  public EntityResult ratingInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-  return this.daoHelper.insert(this.ratingDao, attrMap);
+  EntityResult newRating = this.daoHelper.insert(this.ratingDao, attrMap);
+  Map allRatingsAttrMap = new HashMap();
+  allRatingsAttrMap.put("id_movie",attrMap.get("id_movie"));
+  //allRatingsAttrMap.add("rating");
+  List<String> ratingColumnsAllRatings = new ArrayList<>();
+  ratingColumnsAllRatings.add("rating_value");
+  EntityResult currentRatingsForMovie = this.daoHelper.query(this.ratingDao, allRatingsAttrMap, ratingColumnsAllRatings);
+  float newAverageRating = calculateAverageRating(currentRatingsForMovie);
+  Map newMovieAverage = new HashMap();
+  newMovieAverage.put("media_rating",newAverageRating);
+  Map newMovieFilter = new HashMap();
+  newMovieFilter.put("id_movie", attrMap.get("id_movie"));
+  movieService.movieUpdate(newMovieAverage, newMovieFilter);
+  return newRating;
+ }
+
+ private float calculateAverageRating (EntityResult allRatingsForMovie) {
+  int ratingsNumbers = allRatingsForMovie.calculateRecordNumber();
+  int ratingsSum = 0;
+  for (int i = 0 ; i < ratingsNumbers; i++) {
+   ratingsSum = ratingsSum + (int) allRatingsForMovie.getRecordValues(i).get("rating_value");
+  }
+  return ratingsSum / ratingsNumbers;
  }
 
  @Override
