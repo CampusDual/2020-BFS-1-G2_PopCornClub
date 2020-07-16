@@ -1,10 +1,10 @@
-<div class="container" *ngIf="movie">
+<div class="container-fluid" *ngIf="movie">
   <div class="row my-5">
-    <div class="col-8 row">
-      <div class="col-4">
+    <div class="col-9 row">
+      <div class="col-5">
         <img src="{{movie.poster}}" alt="Movie Poster" class="img-fluid">
       </div>
-      <div class="col-8">
+      <div class="col-7">
         <h3>{{movie.movie_name}}</h3>
         <p>{{movie.movie_year}} | {{movie.duration}} min | {{nationality.nationality_name}}</p>
         <p class="movie-rating"><i class="material-icons score-star">grade</i><span><b>{{movie.media_rating}}</b> / 10</span><a href="#">DA TU VALORACION</a></p>
@@ -17,7 +17,7 @@
         </p>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
       <app-related-movies></app-related-movies>
     </div>
   </div>
