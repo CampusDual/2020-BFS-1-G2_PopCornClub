@@ -7,15 +7,16 @@ h2{
 
 .bg-cinema{
   background-image: url(../../assets/images/bodegon-sillas-cine_23-2148115834.jpg);
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .row {
-  height: 100vh;
+  height: 85vh;
 }
 
 .middle {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .main {

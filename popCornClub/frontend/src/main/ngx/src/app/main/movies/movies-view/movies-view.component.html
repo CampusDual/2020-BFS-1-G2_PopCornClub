@@ -9,8 +9,8 @@
         <p>{{movie.movie_year}} | {{movie.duration}} min | {{nationality.nationality_name}}</p>
         <p class="movie-rating"><i class="material-icons score-star">grade</i><span><b>{{movie.media_rating}}</b> / 10</span><a href="#">DA TU VALORACION</a></p>
         <p>{{movie.description}}</p>
-        <p class="tag-list" >
-          <span class="badge badge-secondary" *ngFor="let genre of genres">{{genre.genre_value}}</span>
+        <p class="tag-list" >          
+          <span><a routerLink="/genres/view/{{genre.id_genre}}" class="badge badge-secondary" *ngFor="let genre of genres">{{genre.genre_value}}</a></span>
         </p>
         <p>
           <span *ngFor="let artist of casting"><b>{{artist.casting_role}}:</b> {{artist.casting_name}}<br></span>

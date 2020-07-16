@@ -18,6 +18,9 @@ export class NavbarComponent implements OnInit {
     private popcorn: PopcornService, private router: Router
   ) {
     this.loggedIn = loginService.isLoggedIn();
+    //loginService.onLogin.subscribe( () => this.loggedIn = true );
+    //loginService.onLogout.subscribe( () => { this.loggedIn = false;
+    //console.log("logged out event");});
   }
   searchMovie(termino : String){
     

@@ -19,6 +19,29 @@ div.card{
     height: 100%;
 }
 
+.rank {
+    color: #5453;
+    font-size: 120px;
+    font-weight: 600;
+    text-align: right;
+    line-height: 1.6;
+}
+
+.movie-rank-card {
+    height: 180px;
+    overflow-y: hidden;
+
+}
+
+.movie-rank-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.img-card {
+    height: 140px;
+}
+
 .jumbotron {
     padding: 1rem;
 }

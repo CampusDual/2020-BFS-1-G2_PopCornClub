@@ -57,12 +57,21 @@ public class MovieRestController extends ORestController<IMovieService>{
    		}
    	}
 
+
 	@RequestMapping(value = "/searchMovies", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public EntityResult getSearchMovie(@RequestBody Map<String, Object> req) {
 		try {
 			List<String> columns = (List<String>) req.get("columns");
 			Map<String, Object> key = new HashMap<String, Object>();
 			return movieService.infoMoviesQuery(key, columns);
+
+	@RequestMapping(value = "/relatedMovies", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public EntityResult getRelatedMovie(@RequestBody Map<String, Object> req) {
+		try {
+			List<String> columns = (List<String>) req.get("columns");
+			Map<String, Object> key = new HashMap<String, Object>();
+			return movieService.relatedMoviesQuery(key, columns);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			EntityResult res = new EntityResult();
@@ -70,4 +79,18 @@ public class MovieRestController extends ORestController<IMovieService>{
 			return res;
 		}
 	}
+
+    @RequestMapping(value = "/rankMovies", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+   	public EntityResult getRankMovie(@RequestBody Map<String, Object> req) {
+   		try {
+   			List<String> columns = (List<String>) req.get("columns");
+   			Map<String, Object> key = new HashMap<String, Object>();
+   			return movieService.rankMoviesQuery(key, columns);
+   		} catch (Exception e) {
+   			e.printStackTrace();
+   			EntityResult res = new EntityResult();
+   			res.setCode(EntityResult.OPERATION_WRONG);
+   			return res;
+   		}
+   	}
 }
