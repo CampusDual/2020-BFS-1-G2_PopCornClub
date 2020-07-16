@@ -64,7 +64,13 @@ public class MovieRestController extends ORestController<IMovieService>{
 			List<String> columns = (List<String>) req.get("columns");
 			Map<String, Object> key = new HashMap<String, Object>();
 			return movieService.infoMoviesQuery(key, columns);
-
+		} catch (Exception e) {
+			e.printStackTrace();
+			EntityResult res = new EntityResult();
+			res.setCode(EntityResult.OPERATION_WRONG);
+			return res;
+		}
+	}
 	@RequestMapping(value = "/relatedMovies", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public EntityResult getRelatedMovie(@RequestBody Map<String, Object> req) {
 		try {
