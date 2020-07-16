@@ -16,7 +16,6 @@ import { HomeModule } from './home/home.module';
     MainRoutingModule,
     HomeModule,
     GenresModule
-
   ],
   declarations: [
     MainComponent
