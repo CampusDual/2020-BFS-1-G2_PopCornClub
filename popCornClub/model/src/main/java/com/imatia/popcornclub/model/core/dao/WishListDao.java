@@ -8,7 +8,7 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 
 @Repository("wishlistDao")
 @Lazy
-@ConfigurationFile(configurationFile = "dao/WishList.xml", configurationFilePlaceholder = "dao/placeholders.properties")
+@ConfigurationFile(configurationFile = "dao/WishListDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class WishListDao extends OntimizeJdbcDaoSupport{
 
     public static final String ATTR_ID_MOVIE = "id_movie";
