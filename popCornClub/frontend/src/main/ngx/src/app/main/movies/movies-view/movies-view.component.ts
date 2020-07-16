@@ -54,7 +54,7 @@ export class MoviesViewComponent implements OnInit {
         "filter": {
           "id_movie": this.movieId
         },
-        "columns": ["genre_value"]
+        "columns": ["id_genre", "genre_value"]
       };
 
       let getUserIdBody = {
@@ -75,6 +75,7 @@ export class MoviesViewComponent implements OnInit {
       });
 
       http.post(this.genresEndPoint, JSON.stringify(genreRequestBody), this.httpOptions).subscribe(response => {
+        console.log(response);
         this.genres = response["data"];
       });
 

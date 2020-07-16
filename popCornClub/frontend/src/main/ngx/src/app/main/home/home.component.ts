@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from 'ontimize-web-ngx';
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private actRoute: ActivatedRoute,
+    private http: HttpClient,
     @Inject(LoginService) private loginService: LoginService,
   ) {
     this.loggedIn = loginService.isLoggedIn();

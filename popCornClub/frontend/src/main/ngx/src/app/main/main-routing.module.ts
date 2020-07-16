@@ -1,3 +1,4 @@
+import { GenresModule } from './genres/genres.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
@@ -6,6 +7,7 @@ import { MainComponent } from './main.component';
 import { HomeModule } from './home/home.module';
 import { MoviesModule } from './movies/movies.module';
 import { WishlistModule } from './wishlist/wishlist.module';
+
 
 export function loadHomeModule() {
   return HomeModule;

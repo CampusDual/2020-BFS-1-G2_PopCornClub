@@ -1,5 +1,12 @@
-<div class="container">
-  <div class="row my-3">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 login-main-text text-center bg-cinema">
+      <img src="./assets/images/popcorn.png" width="65%" class="middle">  
+      <br> 
+      <br> 
+      <h2>Crea tu cuenta para disfrutar de todas las ventajas disponibles en Popcorn Club</h2>
+    </div>
+  <div class="col-lg-6 col-sm-12 p-5">
     <div class="col-12">
       <h2>Formulario de registro</h2>
     </div>
@@ -26,9 +33,8 @@
             <label for="inputSurname">Apellidos</label>
             <input type="text" class="form-control" id="inputSurname" placeholder="Introduce tus apellidos" #inputSurname>
           </div>
-          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <button type="submit" class="btn btn-secondary btn-lg btn-block redirect-button" mat-raised-button color="primary"><a [routerLink]="['registercomplete']">Registrarse</a></button>
         </fieldset>
       </form>
     </div>
-  </div>
 </div>

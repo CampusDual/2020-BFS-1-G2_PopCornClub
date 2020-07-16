@@ -1,3 +1,4 @@
+import { GenresModule } from './main/genres/genres.module';
 import { NgModule, NgModuleFactory } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginModule } from './login/login.module';
@@ -6,6 +7,9 @@ import { MoviesViewComponent } from "./main/movies/movies-view/movies-view.compo
 import { MoviesModule } from './main/movies/movies.module';
 import { RegisterModule } from './register/register.module';
 import { WishlistModule } from './main/wishlist/wishlist.module';
+import { load } from '@angular/core/src/render3/instructions';
+import { RegisterModule } from './register/register.module';
+
 
 
 export function loadMoviesModule() {
@@ -27,6 +31,9 @@ export function loadRegisterModule() {
 export function loadWishlistModule() {
   return WishlistModule;
 }
+export function loadGenresModule(){
+  return GenresModule;
+}
 
 export const routes: Routes = [
   { path: 'main', loadChildren: loadMainModule },
@@ -34,6 +41,7 @@ export const routes: Routes = [
   { path: 'register', loadChildren: loadRegisterModule },
   { path: 'movies', loadChildren: loadMoviesModule },
   { path: 'wishlist', loadChildren: loadWishlistModule },
+  { path: 'genres', loadChildren: loadGenresModule },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 

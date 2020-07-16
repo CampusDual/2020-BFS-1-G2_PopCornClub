@@ -16,6 +16,7 @@
         <Query id="genreMovie">
             <AmbiguousColumns>
                 <AmbiguousColumn name="id_movie" prefix="movie" />
+                <AmbiguousColumn name="id_genre" prefix="genre" />
             </AmbiguousColumns>
             <Sentence>
                 <![CDATA[
