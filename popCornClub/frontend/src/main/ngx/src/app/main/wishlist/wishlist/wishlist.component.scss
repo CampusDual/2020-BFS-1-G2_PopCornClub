@@ -1,0 +1,37 @@
+p.movie-description{
+    font-size: 9px;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.movie-card a{
+    text-decoration: none;
+    color: black;
+}
+
+div.movie-card{
+    height: 270px;
+    overflow-y: hidden;
+}
+
+div.card{
+    height: 100%;
+}
+
+.jumbotron {
+    padding: 1rem;
+}
+
+.movie-card{
+    overflow: visible !important;
+}
+
+.delete-button{
+    position:absolute;
+    scale: 4.0;
+    top: -28px;
+    right: 5px;
+    z-index: 99999;
+    cursor: pointer;
+}

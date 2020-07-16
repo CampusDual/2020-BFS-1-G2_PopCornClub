@@ -30,6 +30,7 @@ public class MasterService implements IMasterService {
     @Autowired private NationalityHasMovieDao nationalityHasMovieDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
     @Autowired private MovieDao movieDao;
+    @Autowired private WishListDao wishlistDao;
 
 
     //CATEGORY
@@ -92,6 +93,31 @@ public class MasterService implements IMasterService {
     public EntityResult ratingDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.ratingDao, keyMap);
     }
+
+
+    //WISHLIST
+
+    @Override
+    public EntityResult wishlistQuery(Map<String, Object> keyMap, List<String> attrList)
+            throws OntimizeJEERuntimeException {
+            return this.daoHelper.query(this.wishlistDao, keyMap, attrList);
+    }
+
+    @Override
+    public EntityResult wishlistInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.insert(this.wishlistDao, attrMap);
+    }
+
+    @Override
+    public EntityResult wishlistUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.update(this.wishlistDao, attrMap, keyMap);
+    }
+
+    @Override
+    public EntityResult wishlistDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.delete(this.wishlistDao, keyMap);
+    }
+
 
     //CASTING_HAS_MOVIE
     @Override

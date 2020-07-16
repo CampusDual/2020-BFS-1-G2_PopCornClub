@@ -11,6 +11,8 @@ import { RegistercompleteComponent } from './register/registercomplete/registerc
     RegisterRoutingModule,
     ReactiveFormsModule
   ],
+  
   declarations: [RegisterComponent, RegistercompleteComponent]
+  
 })
 export class RegisterModule { }

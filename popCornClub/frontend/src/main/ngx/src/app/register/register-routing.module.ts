@@ -4,12 +4,15 @@ import { RegisterComponent } from './register/register.component';
 import { RegistercompleteComponent } from "./register/registercomplete/registercomplete.component";
 
 const routes: Routes = [
-  { path: '', component: RegisterComponent },
+ { path: '', component: RegisterComponent },
  { path: 'registercomplete', component: RegistercompleteComponent } 
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class RegisterRoutingModule { }
+

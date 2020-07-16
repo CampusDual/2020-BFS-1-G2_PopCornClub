@@ -18,6 +18,7 @@ export class MoviesViewComponent implements OnInit {
   httpClient = null;
   movieId: Number = -1;
   idUser: Number = 1;
+  inWishlist: Boolean = true;
 
   constructor(
     private router: Router,
@@ -30,28 +31,28 @@ export class MoviesViewComponent implements OnInit {
       this.movieId = Number(params["id"]);
       let movieRequestBody = {
         "filter": {
-          "id_movie": Number(params["id"])
+          "id_movie": this.movieId
         },
         "columns": ["id_movie", "movie_name", "duration", "critic", "description", "poster", "premiere", "trailer", "movie_year", "media_rating"]
       };
 
       let castingRequestBody = {
         "filter": {
-          "id_movie": Number(params["id"])
+          "id_movie": this.movieId
         },
         "columns": ["casting_role", "casting_name"]
       };
 
       let nationalityRequestBody = {
         "filter": {
-          "id_movie": Number(params["id"])
+          "id_movie": this.movieId
         },
         "columns": ["nationality_name"]
       };
 
       let genreRequestBody = {
         "filter": {
-          "id_movie": Number(params["id"])
+          "id_movie": this.movieId
         },
         "columns": ["id_genre", "genre_value"]
       };
@@ -65,13 +66,14 @@ export class MoviesViewComponent implements OnInit {
 
 
       http.post(this.moviesEndPoint, JSON.stringify(movieRequestBody), this.httpOptions).subscribe(response => {
+        console.log(response);
         this.movie = response["data"][0];
       });
 
       http.post(this.nationalityEndPoint, JSON.stringify(nationalityRequestBody), this.httpOptions).subscribe(response => {
         this.nationality = response["data"][0];
       });
- 
+
       http.post(this.genresEndPoint, JSON.stringify(genreRequestBody), this.httpOptions).subscribe(response => {
         console.log(response);
         this.genres = response["data"];
@@ -86,18 +88,27 @@ export class MoviesViewComponent implements OnInit {
         let canRateRequestBody = {
           "filter": {
             "id_user": this.idUser,
-            "id_movie": Number(params["id"])
+            "id_movie": this.movieId
           },
           "columns": ["id_rating"]
         };
 
         http.post(this.canRateEndPoint, JSON.stringify(canRateRequestBody), this.httpOptions).subscribe(response => {
-            this.canRate = !Array.isArray(response["data"]);
+          this.canRate = !Array.isArray(response["data"]);
+        });
+
+        let inWishlistRequestBody = {
+          "filter": {
+            "id_user": this.idUser,
+            "id_movie": this.movieId
+          },
+          "columns": ["id_wishlist"]
+        };
+
+        http.post(this.wishlistSearchEndPoint, JSON.stringify(inWishlistRequestBody), this.httpOptions).subscribe(response => {
+          this.inWishlist = Array.isArray(response["data"]);
         });
       });
-
-      
-     
     });
   }
 
@@ -108,6 +119,8 @@ export class MoviesViewComponent implements OnInit {
   genresEndPoint = "http://localhost:33333/genres/genreMovie/search";
   canRateEndPoint = "http://localhost:33333/ratings/rating/search";
   ratingsEndPoint = "http://localhost:33333/ratings/rating";
+  wishlistSearchEndPoint = "http://localhost:33333/master/wishlist/search";
+  wishlistEndPoint = "http://localhost:33333/master/wishlist";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -116,7 +129,7 @@ export class MoviesViewComponent implements OnInit {
     })
   };
 
-  onUserRate(){
+  onUserRate() {
     let ratingsRequestBody = {
       "data": {
         "id_user": this.idUser,
@@ -128,6 +141,19 @@ export class MoviesViewComponent implements OnInit {
       console.log(response);
     });
 
+  }
+
+  addToWishlist(movieId){
+    let addToWishlistRequestBody = {
+      "data": {
+        "id_user": this.idUser,
+        "id_movie": this.movieId
+      }
+    };
+
+    this.httpClient.post(this.wishlistEndPoint, JSON.stringify(addToWishlistRequestBody), this.httpOptions).subscribe(response => {
+      this.inWishlist = true;
+    });
   }
 
   ngOnInit() {

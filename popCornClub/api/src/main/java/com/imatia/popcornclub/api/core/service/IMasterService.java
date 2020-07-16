@@ -27,6 +27,12 @@ public interface IMasterService {
     public EntityResult ratingUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
     public EntityResult ratingDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
+    //WISHLIST
+    public EntityResult wishlistQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+    public EntityResult wishlistInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
+    public EntityResult wishlistUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult wishlistDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
     //CASTING_HAS_MOVIE
     public EntityResult castingHasMovieQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
     public EntityResult castingHasMovieInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;

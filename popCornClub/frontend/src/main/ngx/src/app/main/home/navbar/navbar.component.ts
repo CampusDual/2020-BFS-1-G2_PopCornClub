@@ -17,20 +17,15 @@ export class NavbarComponent implements OnInit {
     @Inject(LoginService) private loginService: LoginService,
     private popcorn: PopcornService, private router: Router
   ) {
-    this.loggedIn = loginService.isLoggedIn();
-    //loginService.onLogin.subscribe( () => this.loggedIn = true );
-    //loginService.onLogout.subscribe( () => { this.loggedIn = false;
-    //console.log("logged out event");});
+      
+    setInterval(() => {
+      this.loggedIn = loginService.isLoggedIn();
+    }, 500);
   }
   searchMovie(termino : String){
     
     window.location.href='/movies/list;search=' + termino;
-    //this.router.navigate(['/movies/list', { search: termino }]);
     
-    //this.popcorn.getMovie(termino).subscribe(response =>{      
-     // this.movies = response["data"];
-     // console.log(this.movies);
-       //console.log(termino)
     };      
 
   

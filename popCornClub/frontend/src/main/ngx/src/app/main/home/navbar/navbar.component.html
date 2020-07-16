@@ -20,7 +20,8 @@
           Mi cuenta
         </a>
         <div *ngIf="loggedIn" class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a routerLink="/login" class="dropdown-item"> Cerrar sesión</a>
+          <a *ngIf="loggedIn" href="/wishlist" class="dropdown-item">Lista de deseos</a>
+          <a routerLink="/login" class="dropdown-item">{{ 'LOGOUT' | oTranslate  }} </a>
         </div>
     </li>
     </ul>

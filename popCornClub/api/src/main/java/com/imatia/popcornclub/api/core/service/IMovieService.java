@@ -18,4 +18,5 @@ public interface IMovieService {
     public EntityResult searchMoviesQuery(Map<String, Object> keyMap, List<String > attrList) throws OntimizeJEERuntimeException;
     public EntityResult relatedMoviesQuery(Map<String, Object> keyMap, List<String > attrList) throws OntimizeJEERuntimeException;
     public EntityResult rankMoviesQuery(Map<String, Object> keyMap, List<String > attrList) throws OntimizeJEERuntimeException;
+    public EntityResult relatedMoviesQuery(Map<String, Object> keyMap, List<String > attrList) throws OntimizeJEERuntimeException;
 }

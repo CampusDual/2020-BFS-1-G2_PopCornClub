@@ -6,6 +6,7 @@ import { MoviesViewComponent } from "./movies/movies-view/movies-view.component"
 import { MainComponent } from './main.component';
 import { HomeModule } from './home/home.module';
 import { MoviesModule } from './movies/movies.module';
+import { WishlistModule } from './wishlist/wishlist.module';
 
 
 export function loadHomeModule() {
